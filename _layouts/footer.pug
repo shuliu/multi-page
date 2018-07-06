@@ -1,0 +1,56 @@
+//- footer.pug
+//- 
+//- 功能選單
+- var footerNav = [{title: "關於神腦線上", navs: [{name: "神腦官網", link: "https://www.senao.com.tw/"}, {name: "關於我們", link: "/dist/about.html"}, {name: "會員服務條款", link: "/dist/terms.html"}, {name: "隱私權政策", link: "/dist/privacy.html"}, {name: "網站導覽", link: "/dist/sitemap.html"}]}, {title: "服務 & 合作", navs: [{name: "服務據點", link: "/dist/location.html"}, {name: "活動專區", link: "/dist/news-list.html"}, {name: "會員生日禮", link: "http://www.senao.com.tw/birthday/"}, {name: "訂單查詢", link: "/dist/order-fix-v1/order-list.html"}, {name: "合作提案", link: "/dist/supplier.html"}]}, {title: "客服中心", navs: [{name: "退貨須知", link: "/dist/service-return.html"}, {name: "客服FAQ", link: "/dist/faq-list.html"}, {name: "原廠維修", link: "/dist/service-repair.html"}]}]
+
+//- 特色
+- var footerFeature = [{title: "滿額免運費", subtitle: "消費滿490元免運費", icon: "icon-footer-free", link: "/dist/service-deliver.html#pay"}, {title: "配送取貨", subtitle: "提供宅配或門市取貨", icon: "icon-footer-truck", link: "/dist/service-deliver.html"}, {title: "會員福利", subtitle: "神腦會員獨享優惠", icon: "icon-footer-good", link: "/dist/purview.html"}, {title: "神腦買情報粉絲團", subtitle: "加入FB粉絲團", icon: "icon-footer-share", link: "https://www.facebook.com/senaoonline"}]
+
+//- 條款選單
+- var footerAbout = [{name: "關於我們", link: "/dist/about.html"}, {name: "會員服務條款", link: "/dist/terms.html"}, {name: "隱私權政策", link: "/dist/privacy.html"}, {name: "新手指南", link: "/dist/faq-shopping.html"}, {name: "網站導覽", link: "/dist/sitemap.html"}, {name: "合作提案", link: "/dist/supplier.html"}]
+
+
+//- ****
+.container
+  //- A) Navs
+  .row.footer-nav
+    //- 左側選單
+    each item in footerNav
+      .col-md-4.footer-nav-item
+        h5.title= item.title
+        ul.nav
+          each sub in item.navs
+            li
+              a(href=sub.link, target="_blank")= sub.name
+
+    //- 右側四塊特色說明
+    .col-md-12.footer-nav-item
+      ul.footer-feature-list
+        each item in footerFeature
+          li
+            a(href=item.link, target="_blank")
+              i.icon(class=item.icon)
+              .has-inline
+                h5.title= item.title
+                p.content= item.subtitle
+  
+  //- B) Copyright
+  .row.footer-info
+    .col-md-16
+      //- navs: 暫時移除此列 update.20161108
+      //- ul.nav.nav-inline
+      //-   each item in footerAbout
+      //-     li.nav-item
+      //-       a.nav-link(href=item.link)= item.name
+      //- **
+      p.copyright.
+        神腦國際企業股份有限公司　地址：台灣23148新北市新店區中正路531號2樓#[br]
+        Copyright@2016 SENAO INTERNATIONAL CO.,LTD
+
+    //- Download Icons
+    .col-md-8
+      .app-downloads
+        span.text-muted.
+          神腦線上APP下載#[br]#[a.underline.inverted(href="https://www.senao.com.tw/event/20170101_app_renew", target="_blank") 詳細說明]
+        img.qrcode(alt="AppStore", src="/public/images/app-download-qrcode.svg")
+

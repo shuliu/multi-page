@@ -1,0 +1,71 @@
+//- modal-coupon.pug
+//- 
+#couponModal.modal
+  // dialog = 尺寸設定 
+  .modal-dialog
+    // Content = 防止內容溢出的框框 
+    .modal-content
+      .modal-header
+        h3.text-left 本商品可使用的優惠券
+        a.btn.btn-close(href="", data-dismiss="modal", aria-label="Close")
+          i.icon.icon-close
+      .modal-body
+        //- 商品價格(電商價)
+        p.font-bold #[i.icon.icon-bag]神腦線上價#[b.price.spacing.fn-md 23,900]元
+        //- TABLE
+        .css-table.middle.fn-sm
+          // 標題 
+          .css-tr
+            .css-th 活動名稱
+            .css-th.text-center.w-f8 優惠券面額
+            .css-th.text-center.w-f8 折扣後金額
+          // 內容 
+          .css-tr
+            .css-td 
+              // 使用期限 
+              span.date 2017/04/01 ~ 2017/04/31
+              // 優惠券名稱
+              span.text 會員專屬$777折價券 (單品滿7000使用)
+            .css-td.text-center.w-f8 $777
+            .css-td.text-center.w-f8 #[b.price.fn-root $23,123]
+          .css-tr
+            .css-td 
+              span.date 2017/04/01 ~ 2017/04/31
+              span.text 會員專屬$520折價券 (單品滿999使用)
+            .css-td.text-center.w-f8 $520
+            .css-td.text-center.w-f8 #[b.price.fn-root $23,380]
+          .css-tr
+            .css-td 
+              span.date 2017/04/01 ~ 2017/04/31
+              span.text 會員專屬$300折價券 (單品滿799使用)
+            .css-td.text-center.w-f8 $300
+            .css-td.text-center.w-f8 #[b.price.fn-root $23,600]
+        
+        //- 門市優惠券
+        .row.store-coupon
+          .coupon-item
+            .content
+              p.date #[span.tag.tag-secondary.tag-mini 線上活動]2017/04/01 ~ 2017/12/31
+              p.title 三月門市春電季 ★ 會員專屬$1500折價券 (單品滿萬使用)
+            .btn.tooltip-hover 
+              p.value $1,500
+              p.text-muted 前往門市領取
+              span.tooltip.top 查詢最近的門市據點
+          .coupon-item
+            .content
+              p.date #[span.tag.tag-secondary.tag-mini 門市活動]2017/04/01 ~ 2017/12/31
+              p.title 滿額抽ZenFone 3 Zoom，登錄再抽百萬紅利點數 滿額抽ZenFone 3 Zoom，登錄再抽百萬紅利點數]
+            .btn.tooltip-hover 
+              p.value 贈品
+              p.text-muted 前往門市領取
+              span.tooltip.top 查詢最近的門市據點
+
+        //- 注意事項
+        ul.has-type-disc.warning.fn-sm
+          li 優惠券請至購物車選用，使用辦法請見優惠券使用辦法
+          li 折扣後金額僅供參考，實際結帳金額請依購物車結帳頁面為準
+          li 門市領取神腦線上優惠券，請洽各#[a.underline.inverted(href="/dist/location.html", target="_blank") 神腦特約門市]
+
+
+
+

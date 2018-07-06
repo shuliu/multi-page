@@ -1,0 +1,379 @@
+//- nav-aside.pug
+//- 側邊選單
+//- 
+//- Value : Member
+- var memberAside_edit = [{name: "修改會員資料", link: "/dist/member-fix-v1/mb-profile-edit.html"}, {name: "修改密碼", link: "/dist/member-fix-v1/mb-pwd-edit.html"},{name: "修改Email", link: "/dist/member-fix-v1/mb-email-edit.html"}]
+- var memberAside_order = [{name: "訂單查詢", link: "/dist/order-fix-v1/order-list.html"}, {name: "電子票券", link: "/dist/ticket-fix-v1/ticket-list.html"}, {name: "收件人筆記本", link: "/dist/member-fix-v1/mb-notes-account.html"}, {name: "統編筆記本", link: "/dist/member-fix-v1/mb-notes-company.html"}]
+- var memberAside_inbox = [{name: "Email收件夾", link: "/dist/member-fix-v1/mb-mail-inbox.html"}, {name: "客服聯絡紀錄", link: "/dist/member-fix-v1/mb-msg-inbox.html"}, {name: "簡訊通知", link: "/dist/member-fix-v1/mb-msg-sms.html"}]
+- var memberAside_einvoice = [{name: "電子發票載具歸戶", link: "/dist/member-fix-v1/mb-einvoice.html"}, {name: "電子發票說明", link: "/dist/member-fix-v1/mb-einvoice-chart.html"}]
+- var memberAside_repair = [{name: "預約維修", link: "/dist/member-fix-v1/mb-repair-reserve.html"}, {name: "維修進度查詢", link: "/dist/member-fix-v1/mb-repair-progress.html"}, {name: "預約紀錄查詢", link: "/dist/member-fix-v1/mb-repair-history.html"}]
+
+//- Value : 2R
+- var member2RAside_income = [{name: "收入總覽", link: "/dist/member-2R/mb-2R-income.html"}, {name: "訂單銷售明細", link: "/dist/member-2R/mb-2R-order-detail.html"},{name: "帳戶明細查詢", link: "/dist/member-2R/mb-2R-account-detail.html"},{name: "我要請款", link: "/dist/member-2R/mb-2R-payment-request.html"}]
+- var member2RAside_profile = [{name: "帳號資訊查詢", link: "/dist/member-2R/mb-2R-profile.html"}, {name: "好友清單", link: "/dist/member-2R/mb-2R-friendslist.html"}]
+- var member2RAside_help = [{name: "使用教學", link: "/dist/member-2R/mb-2R-help.html"}, {name: "常見問題", link: "/dist/faq-2R-list.html",target:"_blank"}, {name: "分潤辦法", link: "/dist/member-2R/mb-2R-bonus.html"}]
+
+//- Value : Member All
+-
+  var memberAside = [
+    {
+      name: "訂單中心",
+      cate: [
+        {
+          id: "1_1",
+          name: "訂單查詢", 
+          link: "/dist/order-fix-v1/order-list.html"
+        }, {
+          id: "1_2",
+          name: "電子票券",
+          link: "/dist/ticket-fix-v1/ticket-list.html"
+        }, {
+          id: "1_3",
+          name: "商品收藏", 
+          link: "/dist/member-fix-v1/mb-wishlist-product.html"
+        }
+      ]
+    }, {
+      name: "購物車",
+      cate: [
+        {
+          id: "2_1",
+          name: "一般宅配",
+          tag: "(3)",
+          link: "/dist/cart-list.html"
+        }, {
+          id: "2_2",
+          name: "限神腦門市",
+          tag: "(1)",
+          link: "/dist/cart-list-store.html"
+        }, {
+          id: "2_3",
+          name: "限宅配", 
+          tag: "(2)",
+          link: "/dist/cart-list-delivery.html"
+        }, {
+          id: "2_4",
+          name: "電子票券", 
+          tag: "(12)",
+          link: "/dist/cart-list-ticket.html"
+        }
+      ]
+    }, {
+      name: "專屬優惠",
+      cate: [
+        {
+          id: "3_1",
+          name: "優惠券",
+          tag: "(2)",
+          link: "/dist/member-fix-v1/mb-coupon.html"
+        }, {
+          id: "3_2",
+          name: "紅利點數",
+          link: "/dist/member-fix-v1/mb-bonus.html"
+        }, {
+          id: "3_3",
+          name: "會員生日禮", 
+          link: "http://www.senao.com.tw/birthday/",
+          target: true
+        }, {
+          id: "3_4",
+          name: "活動專區", 
+          link: "https://online.senao.com.tw/ActivityArea",
+          target: true
+        }
+      ]
+    }, {
+      name: "個人中心",
+      cate: [
+        {
+          id: "4_1",
+          name: "修改會員資料",
+          tag: "(尚未完成)", 
+          link: "/dist/member-fix-v1/mb-profile-edit.html"
+        }, {
+          id: "4_2",
+          name: "修改密碼",
+          link: "/dist/member-fix-v1/mb-pwd-edit.html"
+        }, {
+          id: "4_3",
+          name: "編輯收件人筆記本", 
+          link: "/dist/member-fix-v1/mb-notes-account.html"
+        }, {
+          id: "4_4",
+          name: "編輯統編筆記本", 
+          link: "/dist/member-fix-v1/mb-notes-company.html"
+        }, {
+          id: "4_5",
+          name: "Email收件夾", 
+          tag: "(6)",
+          link: "/dist/member-fix-v1/mb-mail-inbox.html"
+        }, {
+          id: "4_6",
+          name: "簡訊通知", 
+          tag: "(2)",
+          link: "/dist/member-fix-v1/mb-msg-sms.html"
+        }, {
+          id: "4_7",
+          name: "客服聯絡紀錄", 
+          link: "/dist/member-fix-v1/mb-msg-inbox.html"
+        }, {
+          id: "4_8",
+          name: "電子發票載具歸戶", 
+          link: "/dist/member-fix-v1/mb-einvoice.html"
+        }
+      ]
+    }, {
+      name: "服務說明",
+      cate: [
+        {
+          id: "5_1",
+          name: "優惠券使用辦法",
+          link: "/dist/service-coupon.html",
+          target: true
+        }, {
+          id: "5_2",
+          name: "紅利點數使用規則",
+          link: "/dist/service-bonus.html",
+          target: true
+        }, {
+          id: "5_3",
+          name: "電子發票說明", 
+          link: "/dist/service-einvoice.html",
+          target: true
+        }, {
+          id: "5_4",
+          name: "退貨須知", 
+          link: "/dist/service-return.html",
+          target: true
+        }, {
+          id: "5_5",
+          name: "客服FAQ", 
+          link: "/dist/faq-list.html",
+          target: true
+        }
+      ]
+    }
+  ]
+//- Value : About
+- var aboutAside = [{name: "神腦官網", link: "https://www.senao.com.tw/"}, {name: "關於我們", link: "/dist/about.html"}, {name: "會員服務條款", link: "/dist/terms.html"}, {name: "隱私權政策", link: "/dist/privacy.html"}, {name: "網站導覽", link: "/dist/sitemap.html"}]
+//- Value : FAQ
+-
+  var faqAside = [
+    {
+      name: "會員服務", 
+      cate: [
+        {
+          name: "會員/網頁/系統問題", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "查詢行銷活動", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "會員紅利查詢", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "紅利點數使用說明", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "折價券使用辦法", 
+          link: "/dist/faq-list.html"
+        }
+      ]
+    }, {
+      name: "訂購服務", 
+      cate: [
+        {
+          name: "新手指南", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "訂購及付款諮詢", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "取消訂單", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "更改收貨地址", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "出貨進度查詢", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "配送規範", 
+          link: "/dist/faq-list.html"
+        }
+      ]
+    }, {
+      name: "帳款服務", 
+      cate: [
+        {
+          name: "退款須知", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "發票問題", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "電子發票說明", 
+          link: "/dist/faq-list.html"
+        }
+      ]
+    }, {
+      name: "售後服務", 
+      cate: [
+        {
+          name: "鑑賞期退貨", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "貨到缺件/瑕疵不符", 
+          link: "/dist/faq-list.html"
+        }, {
+          name: "維修保固諮詢", 
+          link: "/dist/faq-list.html"
+        }
+      ]
+    }
+  ]
+
+//- Value : 2R 常見問題
+-
+  var faq2RAside = [
+    {
+      name: "了解2R", 
+      cate: [
+        {
+          name: "何謂2R", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "如何加入2R", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "2R分潤辦法", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "2R規範", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "2R合作條款", 
+          link: "/dist/faq-2R-list.html"
+        }
+      ]
+    }, {
+      name: "加入會員", 
+      cate: [
+        {
+          name: "加入會員須檢附文件", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "審核時間需要多久", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "如何知道自己是否加入成功",
+          link: "/dist/faq-2R-list.html"  
+        }
+      ]
+    }, {
+      name: "請款流程", 
+      cate: [
+        {
+          name: "如何請款", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "請款金額限制", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "請款需檢附文件", 
+          link: "/dist/faq-2R-list.html"
+        }
+      ]
+    }, {
+      name: "其他常見問題", 
+      cate: [
+        {
+          name: "申請加入有限制嗎", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "申請加入是否需費用", 
+          link: "/dist/faq-2R-list.html"
+        }, {
+          name: "什麼情況為推薦成功", 
+          link: "/dist/faq-2R-list.html"
+        },{
+          name: "什麼狀況為推薦失敗", 
+          link: "/dist/faq-2R-list.html"
+        },{
+          name: "如何查詢成效", 
+          link: "/dist/faq-2R-list.html"
+        }
+      ]
+    }
+  ]
+
+
+//- Mixin -------------------------------
+//- 
+//- ** Use for Member / Order / About
+mixin navsAside(val, title, items)
+  .menu-list-panel.secondary 
+    h4.menu-list-title= title
+    ul.menu-list
+      each item, index in items
+        if (val === index)
+          li.menu-list-item.active
+            a.has-arrow(href=item.link)= item.name
+        else
+          li.menu-list-item
+            a.has-arrow(href=item.link)= item.name 
+
+//- ** Use for 2R
+mixin navs2RAside(val, title, items)
+  .menu-list-panel.primary 
+    h4.menu-list-title= title
+    ul.menu-list
+      each item, index in items
+        if (val === index)
+          li.menu-list-item.active
+            a.has-arrow(href=item.link, target=item.target)= item.name
+        else
+          li.menu-list-item
+            a.has-arrow(href=item.link, target=item.target)= item.name 
+
+//- ** FAQ專用選單
+mixin navsAside_hasFaq(items)
+  .panel.panel-inverted.stackable 客服FAQ
+  each item in items
+    .panel.panel-primary.shrink.stackable
+      .panel-head= item.name 
+      .panel-body
+        ul.has-type-disc
+          each sub in item.cate
+            li
+              a(href=sub.link)= sub.name
+//- ** 2R 常見問題專用選單
+mixin navsAside_hasFaq(items)
+  .panel.panel-inverted.stackable 2R常見問題
+  each item in items
+    .panel.panel-primary.shrink.stackable
+      .panel-head= item.name 
+      .panel-body
+        ul.has-type-disc
+          each sub in item.cate
+            li
+              a(href=sub.link)= sub.name
+
+//- ** Member專用選單
+mixin navsAside_hasMember(val, items)
+  .panel.panel-caption.stackable #[a(href="/dist/member-fix-v1/mb-home.html") 我的帳戶]
+  each item in items
+    .panel.panel-default.stackable
+      .panel-head.none-underline= item.name 
+      .panel-body
+        ul.has-type-caret.fn-sm
+          each sub in item.cate
+            if val == sub.id
+              li.active
+                a(href=sub.link) #{sub.name}#[b.fn-mini.warning.spacing.sm #{sub.tag}]
+            else if sub.target == true
+              li
+                a(href=sub.link, target="_blank") #{sub.name}#[b.fn-mini.warning.spacing.sm #{sub.tag}]
+            else
+              li
+                a(href=sub.link) #{sub.name}#[b.fn-mini.warning.spacing.sm #{sub.tag}]

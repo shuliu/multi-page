@@ -1,0 +1,51 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    block title
+      title 會員中心
+    include ../meta.pug
+
+  body
+
+    // { Header } 
+    header
+      - var MemberIslogin = true
+      - var Member2R = true
+      - var Membrer2RHide = true
+      include ../header.pug
+
+    // { Wrapper } 
+    .wrapper
+      .container
+
+        // { Breadcrumb } 
+        block breadcrumb
+        
+        // { Nav-tabs } 
+        block navTabs
+        
+        block navSubTabs
+        .row
+          // { Aside } 
+          aside.col-md-5
+            block aside
+
+          // { Main } 
+          main.col-md-19
+            block main
+
+        // { GoTop } 
+        a.btn-gotop
+          i.icon.icon-arrow-up
+          span TOP
+
+    // { Footer } 
+    footer.footer
+      include ../footer_2R.pug
+
+
+    //- ********** Script **********
+    //- 
+    include ../scripts.pug
+
+    block scripts

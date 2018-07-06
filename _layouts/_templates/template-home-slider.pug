@@ -1,0 +1,82 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    title 神腦線上
+    include ../meta.pug
+    // /festivals/xmas 聖誕節慶
+    link(rel="stylesheet", type="text/css", href="/public/stylesheets/festivals/xmas.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css")
+
+  body.home
+
+    // { Header } 
+    header
+      // ### 置頂廣告 
+      .top-bannerbox
+        .container
+          .adbox.adbox-xs
+            a(href="#0", title="廣告活動名稱")
+              img(alt="廣告活動名稱", src="/public/images/banner/topbanner-3.jpg")
+            button#ad-btn-open.btn.btn-inverted.btn-mini 展開廣告
+          #adbox-popup.adbox.popup
+            a(href="#0", title="廣告活動名稱")
+              img(alt="廣告活動名稱", src="/public/images/banner/article-banner.jpg")
+            button#ad-btn-close.btn.btn-inverted.btn-mini 收合廣告
+      //- **
+      if navbarAD = false
+      if logoHome = true
+      include ../header.pug
+
+    // { Wrapper }
+    .wrapper.fill
+      .container
+
+        // { Aside }
+        aside.col-md-5
+          block aside
+
+        // { Main }
+        main.col-md-19
+          block main
+
+        // { Fixed AD }
+        //- .adbox.adbox-rail.fixed
+        //-   .clearfix
+        //-     a.btn-close(href="")
+        //-       i.icon.icon-close
+        //-   figure
+        //-     a(href="")
+        //-       p.figure-title 下載APP 天天刮天天抽
+        //-       img.figure-img(src="/public/images/app-download-qrcode.svg", alt="")
+
+        // { GoTop } 
+        a.btn-gotop
+          i.icon.icon-arrow-up
+          span TOP
+
+    // { Footer } 
+    footer.footer
+      include ../footer.pug
+
+    //- index sad model
+    #index-big-banner-modal.modal.fade.in(role='dialog', data-backdrop='static', data-show='true', style='display: none;')
+      .modal-dialog.indexBanner
+        .modal-content
+          .modal-header.text-left
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')
+              i.icon.icon-close
+          .modal-body
+            a(href='https://event.senao.com.tw/esalleventyearend_20171201000/?date=171205&loc=IH&id=8935', target='_blank')
+              img.showimage.img-responsive(src='https://static.senao.com.tw/uploadfile/banner_images/ECOMS/IH_20171205183704.jpg', alt='年終酬賓鈔回饋')
+
+    //- snow 下雪
+    //- 最大 100 顆且需要對應 _snow.scss 的 $snowElements 兩邊一致
+    //.snowBox
+      -for (var i=1; i<=100; i++)
+        .snow-element 
+
+    //- ********** Script **********
+    //- 
+    include ../scripts.pug
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js')
+    script(src='/public/javascripts/slider-swiper.es6.js')

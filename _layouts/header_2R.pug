@@ -1,0 +1,28 @@
+//- header-topbar-nav (2R)
+
+
+//- Value
+//- 
+//- 20180202 - 2R分潤用詞之後會修改, 會連到活動頁, 待製作
+- var headerTopNav = [{title: "神腦線上", link: "/dist/home.html"},{title: "神腦國際", link: "http://www.senao.com.tw/"}, {title: "神腦基金會", link: "https://www.facebook.com/senaoorg/"}, {title: "服務據點", link: "/dist/location.html"},{title: "S-CARE", link: "/dist/article-index.html?與神知識相同版面"}, {title: "FB粉絲團", link: "https://www.facebook.com/senaoonline"}]
+
+
+//- ---------------------------------------------------
+//- type
+//- 
+// ### 通用連結 
+.header-topbar
+  .container
+    ul.nav.nav-inline.pull-right
+      each nav, index in headerTopNav
+        if (index == 4)
+          li
+            a.share-scare(href=nav.link).
+              #[i.icon.icon-heart-scare]#{nav.title}
+        else if(index == 5)
+          li
+            a.share-fb(href=nav.link, target="_blank").
+              #[i.icon.icon-share-fb]#{nav.title}
+        else
+          li
+            a(href=nav.link, target="_blank")= nav.title 

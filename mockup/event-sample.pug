@@ -1,0 +1,49 @@
+//- 活動頁面專用範本
+//- **
+
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    title 神腦線上
+    - var eventTemplate = true
+    include ../_layouts/meta.pug
+  
+
+  // ★ 重要：Body 需 addClass「event」與主線頁面區隔用 ★ 
+  body.event
+
+    // { Header } 
+    header
+      - var login = true
+      include ../_layouts/header.pug
+
+    // { Main } 
+    main.wrapper
+      // 如果要使用滿版背景，請使用「.full-bg 」包覆 ".container" 區塊 
+      // 若不使用，可直接使用 ".container" 區塊 
+      .full-background(style="background-color: #020202")
+        // ### 內容最大限制寬度1200px ### 
+        .container
+          // ----------------------- 
+          // ### 活動徽章請放於下方 ### 
+          .event-badge
+            a(href="")
+              img(src="/public/images/event/temp-event-badge.png", alt="活動徽章")
+          
+          // ----------------------- 
+          // ### 嵌入內容請放於下方 ### 
+          // ### 圖檔請務必放置於「/public/images/event」資料夾裡 
+          .iframe-wrap
+            img(src="/public/images/event/temp-event-banner.jpg", alt="活動廣告")
+            img.spacing.bottom.lg(src="/public/images/event/temp-event-product.png", alt="活動商品")
+
+
+    // { Footer } 
+    include ../_layouts/footer.pug
+
+
+    //- ********** Script **********
+    //- 
+    // { Script } 
+    - var eventTemplate = true
+    include ../_layouts/scripts.pug

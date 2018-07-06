@@ -1,0 +1,36 @@
+//- Meta 設定
+//- 
+// meta: utf-8 & control layout on mobile browsers 
+meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+meta(content="IE=edge", http-equiv="X-UA-Compatible")
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+meta(name="description", content="")
+meta(name="keywords", content="")
+meta(property="og:title", content="標題")
+meta(property="og:description", content="分享文案很多很多字")
+meta(property="og:type", content="website")
+meta(property="og:url", content="")
+meta(property="og:image", content="/public/images/fb_share_560x292.png")
+
+//- 應開發環境的 environment (會給js抓來判斷要打哪一個api路徑)
+meta(property="env", content="dev")
+
+// { Favicon } 
+link(rel="icon", type="image/png", href="/public/images/favicon/favicon.png", sizes="64x64")
+link(rel="shortcut icon", type="image/ico", href="/public/images/favicon/favicon.icon", sizes="64x64")
+link(rel="apple-touch-icon", type="image/png", href="/public/images/favicon/app-touch-icon.png", sizes="180x180")
+  
+// { Style } 
+if eventTemplate
+  // ** 基底樣式；若需新增CSS，建議新增額外的CSS檔並載入
+  link(rel="stylesheet", type="text/css", href="/public/stylesheets/base.css")
+else if vipTemplate
+  link(rel="stylesheet", type="text/css", href="/public/stylesheets/vip.css")
+else if rwdTemplate
+  link(rel="stylesheet", type="text/css", href="/public/stylesheets/rwd.css")
+else 
+  link(rel="stylesheet", type="text/css", href="/public/stylesheets/main.css?201806081109")
+
+script(type="text/javascript", src="/public/javascripts/jquery-2.2.3.min.js")
+//- Extra
+block meta

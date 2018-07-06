@@ -1,0 +1,52 @@
+//- vip-store-elements.pug
+//- 
+//- PA) Header
+//- PB) Footer
+//- PC) Banner
+//- PD) Product-item
+//- PE) Add-check-bar
+//- PF) Product-info-Modal
+//- 
+//- LA) Login
+//- LB) VerifyCode
+//- LC) Leading
+
+//- ---------------------------------------------------
+//- Mixins
+//- 
+//- Header
+mixin rwd_header()
+  //- @Tablet/Mobile only
+  a.btn-link.hidden-lg-up(href="/dist/home.html")
+    i.icon.icon-home
+
+  //- LOGO
+  a.site-logo(href="/dist/home.html")
+    img.logo(src="/public/images/logo-simply.png", alt="神腦線上LOGO")
+
+
+
+
+//- 
+//- Footer
+- var footerAbout = [{name: "關於我們", link: "/dist/about.html"}, {name: "會員服務條款", link: "/dist/terms.html"}, {name: "隱私權政策", link: "/dist/privacy.html"}, {name: "新手指南", link: "/dist/faq-shopping.html"}, {name: "網站導覽", link: "/dist/sitemap.html"}, {name: "合作提案", link: "/dist/supplier.html"}]
+- var footerAboutShort = [{name: "關於我們", link: "/dist/about.html"}, {name: "會員服務條款", link: "/dist/terms.html"}, {name: "合作提案", link: "/dist/supplier.html"}]
+
+mixin rwd_footer()
+  if abridged
+    //- ## 簡略版，用於 登入 & 驗證碼輸入 頁面
+    //- ul.nav.nav-inline.pull-center
+    //-   each item in footerAboutShort
+    //-     li.nav-item
+    //-       a.nav-link(href=item.link, target="_blank")= item.name
+    p.copyright.
+      神腦國際企業股份有限公司#[br]Copyright@2018 SENAO INTERNATIONAL CO.,LTD
+  else
+    p.copyright.
+      神腦國際企業股份有限公司　地址：台灣23148新北市新店區中正路531號2樓#[br]Copyright@2018 SENAO INTERNATIONAL CO.,LTD
+    .app-downloads
+      span.text-muted.
+        神腦線上APP下載#[br]#[a.underline.inverted(href="https://www.senao.com.tw/event/20170101_app_renew", target="_blank") 詳細說明]
+      img.qrcode(alt="AppStore", src="/public/images/app-download-qrcode.svg")
+
+

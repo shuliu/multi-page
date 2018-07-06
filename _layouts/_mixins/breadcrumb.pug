@@ -1,0 +1,271 @@
+//- breadcrumb.pug
+//- 頁面路徑
+//- 
+//- --------------------------------
+//- ** Member
+- var crumbMember = [{name: "首頁", link: "/dist/home.html"}, {name: "我的帳戶", link: "/dist/member-fix-v1/mb-home.html"}]
+- var crumbMember2R = [{name: "首頁", link: "/dist/home.html"}, {name: "我的帳戶", link: "/dist/member-fix-v1/mb-home.html"}, {name: "2R會員專區", link: "/dist/member-2R/mb-2R-home.html"}]
+//- ** Order
+- var crumbOrder = [{name: "首頁", link: "/dist/home.html"}, {name: "我的帳戶", link: "/dist/member-fix-v1/mb-home.html"}, {name: "訂單查詢", link: "mockup/order-fix-v2/order-list.html"}]
+//- ** About
+- var crumbAbout = [{name: "首頁", link: "/dist/home.html"}, {name: "關於神腦線上", link: "/dist/about.html"}]
+//- ** Birthday
+- var crumbBirthday = [{name: "首頁", link: "/dist/home.html"}, {name: "會員生日禮", link: "/dist/birthday-list.html"}]
+- var crumbBirthday_hasInner = [{name: "首頁", link: "/dist/home.html"}, {name: "會員生日禮", link: "/dist/birthday-list.html"}, {name: "2016年神腦會員生日紅利20,000點", link: "/dist/birthday-detail.html"}]
+//- ** News
+- var crumbNews = [{name: "首頁", link: "/dist/home.html"}, {name: "活動專區", link: "/dist/news-list.html"}]
+//- ** Article
+- var crumbArticle = [{name: "首頁", link: "/dist/home.html"}, {name: "神知識", link: "/dist/article-index.html"}]
+- var crumbArticle_hasList = [{name: "首頁", link: "/dist/home.html"}, {name: "神知識", link: "/dist/article-index.html"}, {name: "新機", link: "/dist/article-list.html"}]
+- var crumbArticle_hasSearch = [{name: "首頁", link: "/dist/home.html"}, {name: "神知識", link: "/dist/article-index.html"}, {name: "搜尋結果", link: "/dist/article-search.html"}]
+- var crumbArticle_hasContent = [{name: "首頁", link: "/dist/home.html"}, {name: "神知識", link: "/dist/article-index.html"}, {name: "新機", link: "/dist/article-list.html"}, {name: "Sony Xperia Z5 Premium 玫瑰石英粉今日上市，由中華電信獨賣", link: "/dist/article-detail.html"}]
+//- ** Category
+- var crumbCategory = [{title: "首頁", link: "/dist/home.html", cateOne: ["手機通訊", "電腦資訊", "汽車百貨", "消費影音", "應用周邊", "生活家電", "生活．設計", "保健．保養", "食品．票券"], cateTwo: ["手機", "福利機"], cateThree: ["APPLE", "ASUS", "SONY", "SAMSUNG", "HTC", "OPPO", "SHARP", "LG", "HUAWEI", "小米", "INHON", "其他品牌"], prdName: "ASUS ZenFone 3 Ultra ZU680KL (4G/64G) 6.8吋影音智慧手機"}]
+//- ** Service
+- var crumbServiceNewbie = [{name: "首頁", link: "/dist/home.html"}, {name: "新手指南", link: "/dist/service-newbie.html"}]
+- var crumbServiceReturn = [{name: "首頁", link: "/dist/home.html"}, {name: "退貨須知", link: "/dist/service-return.html"}]
+- var crumbServicePay = [{name: "首頁", link: "/dist/home.html"}, {name: "消費免運費", link: "/dist/service-pay.html"}]
+- var crumbServiceDeliver = [{name: "首頁", link: "/dist/home.html"}, {name: "配送取貨 & 滿額免運費", link: "/dist/service-deliver.html"}]
+- var crumbServiceSupplier = [{name: "首頁", link: "/dist/home.html"}, {name: "合作提案", link: "/dist/supplier.html"}]
+- var crumbServicePurview = [{name: "首頁", link: "/dist/home.html"}, {name: "會員福利", link: "/dist/purview.html"}]
+- var crumbServiceCoupon = [{name: "首頁", link: "/dist/home.html"}, {name: "優惠券使用辦法", link: "/dist/service-coupon.html"}]
+- var crumbServiceBonus = [{name: "首頁", link: "/dist/home.html"}, {name: "紅利點數使用規則", link: "/dist/service-bonus.html"}]
+- var crumbServiceBenefit = [{name: "首頁", link: "/dist/home.html"}, {name: "福利金使用規則", link: "/dist/service-benefit.html"}]
+- var crumbServiceLocation = [{name: "首頁", link: "/dist/home.html"}, {name: "服務據點", link: "/dist/location.html"}]
+- var crumbServiceRepair = [{name: "首頁", link: "/dist/home.html"}, {name: "原廠/維修廠商", link: "/dist/service-repair.html"}]
+- var crumbServiceEinvoice = [{name: "首頁", link: "/dist/home.html"}, {name: "電子發票說明", link: "/dist/service-einvoice.html"}]
+//- ** FAQ
+- var crumbFaq = [{name: "首頁", link: "/dist/home.html"}, {name: "客服FAQ", link: "/dist/faq-list.html"}]
+- var crumb2RFaq = [{name: "首頁", link: "/dist/home.html"}, {name: "2R常見問題", link: "/dist/faq-2R-list.html"}]
+- var crumbFaqContact = [{name: "首頁", link: "/dist/home.html"}, {name: "客服FAQ", link: "/dist/faq-list.html"}, {name: "聯絡客服", link: "/dist/contact.html"}]
+//- ** Search
+- var crumbSearch = [{name: "首頁", link: "/dist/home.html"}, {name: "搜尋結果", link: "/dist/search-result.html"}]
+
+//- *** New Crumbs :: add 20170602 by sq
+-
+  var crumbs = [
+    {
+      //- 我的帳戶 / 訂單查詢 / 電子票券
+      id: "member",
+      name: "我的帳戶", 
+      link: "/dist/member-fix-v1/mb-home.html",
+      cate_sub: [
+        {
+          id: "order",
+          name: "訂單查詢",
+          link: "/dist/member-fix-v1/mb-einvoice.html",
+          sub_child: [
+            {
+              id: "orderDetail",
+              name: "訂單明細",
+              link: ""
+            }, {
+              id: "orderCancel",
+              name: "訂單取消",
+              link: ""
+            }, {
+              id: "orderReturn",
+              name: "申請退貨",
+              link: ""
+            }, {
+              id: "orderRequest",
+              name: "問題詢問",
+              link: ""
+            }, {
+              id: "orderRepair",
+              name: "我要維修",
+              link: ""
+            }
+          ]
+        }, {
+          id: "ticket",
+          name: "電子票券",
+          link: "/dist/ticket-fix-v1/ticket-list.html", 
+          sub_child: [
+            {
+              id: "ticketReturn",
+              name: "申請退貨",
+              link: ""
+            }, {
+              id: "ticketDetail",
+              name: "寒舍艾麗酒店《LA FARFALLA 義式餐廳》-單人平日下午茶BUFFET",
+              link: ""
+            }
+          ]
+        }, {
+          id: "wishlist",
+          name: "商品收藏",
+          link: "/dist/member-fix-v1/mb-wishlist-product.html",
+          sub_child: []
+        }, {
+          id: "coupon",
+          name: "優惠券",
+          link: "/dist/member-fix-v1/mb-coupon.html",
+          sub_child: []
+        }, {
+          id: "bonus",
+          name: "紅利點數",
+          link: "/dist/member-fix-v1/mb-bonus.html",
+          sub_child: []
+        }, {
+          id: "profile",
+          name: "修改會員資料",
+          link: "/dist/member-fix-v1/mb-profile-edit.html",
+          sub_child: []
+        }, {
+          id: "pwd",
+          name: "修改密碼",
+          link: "/dist/member-fix-v1/mb-pwd-edit.html",
+          sub_child: []
+        }, {
+          id: "account",
+          name: "收件人筆記本",
+          link: "/dist/member-fix-v1/mb-notes-account.html",
+          sub_child: []
+        }, {
+          id: "company",
+          name: "統編筆記本",
+          link: "/dist/member-fix-v1/mb-notes-company.html",
+          sub_child: []
+        }, {
+          id: "mail",
+          name: "Email收件夾",
+          link: "/dist/member-fix-v1/mb-mail-inbox.html",
+          sub_child: []
+        }, {
+          id: "sms",
+          name: "簡訊通知",
+          link: "/dist/member-fix-v1/mb-msg-sms.html",
+          sub_child: []
+        }, {
+          id: "msg",
+          name: "客服聯絡紀錄",
+          link: "/dist/member-fix-v1/mb-msg-inbox.html",
+          sub_child: []
+        }, {
+          id: "einvoice",
+          name: "電子發票載具歸戶",
+          link: "/dist/member-fix-v1/mb-einvoice.html",
+          sub_child: []
+        }
+      ]
+    }, {
+      id: "about",
+      name: "關於神腦線上",
+      link: "/dist/about.html",
+      cate_sub: []
+    }, {
+      id: "categoryIndex",
+      name: "全商品分類",
+      link: "/dist/category-index.html",
+      cate_sub: []
+    }, {
+      id: "search",
+      name: "搜尋結果",
+      link: "/dist/search-result.html",
+      cate_sub: []
+    }, {
+      id: "article",
+      name: "神腦買情報",
+      link: "/dist/article-index.html",
+      cate_sub: []
+    }, {
+      id: "faq",
+      name: "客服FAQ",
+      link: "/dist/faq-list.html",
+      cate_sub: []
+    }
+  ]
+
+//- --------------------------------
+//- ** Mixins 
+//- 
+//- A) <a> 屬性樣式
+mixin breadcrumb(items)
+  .row
+    ul.breadcrumbs
+      each item in items
+        li
+          a(href=item.link)= item.name
+
+//- A_new) <a> 屬性樣式 :: add 20170602 by sq
+mixin breadcrumb_new(cate, sub, child)
+  .row
+    ul.breadcrumbs
+      //- 第一層
+      li #[a(href="/dist/home.html") 首頁]
+      //- 第二層
+      each item in crumbs
+        if cate == item.id 
+          li #[a(href=item.link)= item.name]
+        //- 第三層
+        each item2 in item.cate_sub
+          if sub == item2.id
+            li #[a(href=item2.link)= item2.name]
+          //- 第四層
+          each item3 in item2.sub_child
+            if child == item3.id
+              li #[a(href=item3.link)= item3.name]
+              
+//- B) <select> 屬性樣式
+//- 目前使用於 category系列頁面
+mixin breadcrumb_select(items)
+  .row
+    ul.breadcrumbs
+      each item in items
+        li
+          a(href="/dist/home.html")= item.title
+        li
+          select(name="")
+            each cate1 in item.cateOne
+              option(value=cate1)= cate1
+        unless noneTwo
+          li
+            select(name="")
+              each cate2 in item.cateTwo
+                option(value=cate2)= cate2
+        unless noneThree
+          li
+            select(name="")
+              each cate3 in item.cateThree
+                option(value=cate3)= cate3
+        unless noneLast
+          li
+            a(href="/dist/product-detail.html")= item.prdName
+
+
+//- C) <dropdown> 屬性樣式
+//- 目前使用於 category系列頁面 :: update 171116 by sq
+mixin breadcrumb_dropdown(items)
+  .row.clearfix
+    ul.breadcrumbs.pull-left
+      each item in items
+        li
+          a(href="/dist/home.html")= item.title
+        li.dropdown
+          a.dropdown-toggle(href="javascript:;", data-toggle="dropdown") 手機通訊
+          .dropdown-menu
+            each cate1 in item.cateOne
+              a.nav-link(href="/dist/category-main.html")= cate1
+        if cateLevelTwo
+          li.dropdown
+            a.dropdown-toggle(href="javascript:;", data-toggle="dropdown") 手機
+            .dropdown-menu
+              each cate2 in item.cateTwo
+                a.nav-link(href="/dist/category-sub.html")= cate2
+        if cateLevelThree
+          li.dropdown
+            a.dropdown-toggle(href="javascript:;", data-toggle="dropdown") 智慧型手機
+            .dropdown-menu
+              each cate3 in item.cateThree
+                a.nav-link(href="/dist/category-sub-child.html")= cate3
+        if cateLevelLast
+          li
+            a(href="/dist/product-detail.html")= item.prdName
+        //-li
+         a.btn.btn-sm.btn-default dfdfdfd
+    //- 20180223 新增商品說明按鈕與彈跳視窗 for SEO
+    if descriptionShow
+     .pull-right
+      a.btn.btn-sm.btn-query-outline.btn-description(href="#",data-toggle="modal", data-target="#productDescription") #[i.icon.icon-sm.icon-info-circle]#[span 商品說明]
+      //-a.btn.btn-sm.btn-default.btn-description.spacing.left(href="",data-toggle="modal", data-target="#productDescription") #[i.icon.icon-info-circle]

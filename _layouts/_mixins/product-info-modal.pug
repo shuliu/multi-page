@@ -1,0 +1,197 @@
+//- Product-info-Modal.pug
+//- 
+
+//- -------------------------------------
+//- 商品資訊內嵌式彈跳視窗
+//- 目前使用於: 
+//- 1) product-detail > 加購品
+//- 2) vip-store
+//- 
+mixin productInfoModal(_num, tag)
+  //- _num 是產品編號
+  - _num = _num || 10000000000
+  .modal.product-modal(id="productModal-"+_num, "data-pid"=_num)
+    // dialog = 尺寸設定
+    // data-pid 產品編號
+    .modal-dialog
+      // Content = 防止內容溢出的框框 
+      .modal-content
+        //- *** 
+        .modal-header
+          //- 加入標題，使用於一般商品詳細頁
+          h4.title= custom_modal_title
+          a.btn.btn-close(href="", data-dismiss="modal", aria-label="Close")
+            span.text 關閉視窗
+            i.icon.icon-close
+        //- *** 
+        .modal-body.js-tab-in-modal
+          //- ◇◇◇◇◇◇ 上半場 ◇◇◇◇◇◇
+          .row
+            //- * 左側
+            - var prdImages = ["/public/images/demo/p4_1.png", "/public/images/demo/p4_2.png", "/public/images/demo/p4_3.png", "/public/images/demo/p4_4.png", "/public/images/demo/p4_1.png", "/public/images/demo/p4_1.png", "/public/images/demo/p4_1.png", "/public/images/demo/p4_1.png"]
+
+            // 商品圖廊
+            .detail-images
+              .slider-product-view-box
+                //- ** 以下內容預計使用ajax載入 **
+                ul.gallery-slider-view
+                  each img, index in prdImages
+                    li
+                      a(title="圖片標題", href="#inline-bs-modal-img", data-toggle="modal", data-target="#inline-bs-modal-img")
+                        img(src=img, alt="")
+              
+              .slider.view-thumbnail
+                //- ** 以下內容預計使用ajax載入 **
+                .slider-view( id="slider-product-pager-btns-"+_num)
+                  each img, index in prdImages
+                    .item
+                      a(href="javascript:;", data-slide-index=index)
+                        img(alt="商品縮圖" class="thumbnail small" src=img)
+
+            //- * 右側
+            // 商品簡介
+            .detail-intro
+              // 商品名稱
+              h2.product-title ASUS ZenFone 3 Ultra ZU680KL (4G/64G) 6.8吋影音智慧手機#{_num}
+              // 商品特色: 內容使用編輯器編輯
+              .product-desc
+                | 。 64位元高通1.8GHz八核心處理器
+                br
+                | 。 6.8吋FHD IPS 全貼合螢幕
+                br
+                | 。 4GB RAM / 64GB ROM
+                br
+                | 。 十指觸控電容式感應
+                br
+                | 。 雙五磁喇叭提升音量與逼真享受
+                br
+                | 。 首創搭載DTS Headphone:X 技術 7.1 聲道環繞
+                br
+              // 商品限制
+              p.product-type
+                span.label 顏色
+                span.name 銀
+
+              // 優惠說明文字
+              if (tag == true)
+                //- 分隔線
+                hr.divider.horizontal
+                // 贈品
+                ul.product-event
+                  li
+                    span.tag.tag-extra-outline.tag-mini 贈品
+                    span.text-muted ASUS 全系列買就送 32GB MicroSDHC 85M/sec 記憶卡
+                  li
+                    span.tag.tag-extra-outline.tag-mini 贈品
+                    span.text-muted 4.7吋鋼化9H玻璃 滿版螢幕保護貼
+                // 商品限制
+                p.product-extra * 特惠商品不列入折扣項目
+
+          
+          //- ◇◇◇◇◇◇ 下半場 ◇◇◇◇◇◇
+          .row
+            // 商品資訊 : Tab選單
+            .nav-tabs.nav-tabs-product
+              ul.nav-tabs-list.align.center(role="tablist")
+                li.nav-tabs-item.active
+                  a.nav-link(href="javascript:;", role="tab") 商品介紹
+                li.nav-tabs-item
+                  a.nav-link(href="javascript:;", role="tab") 規格
+                li.nav-tabs-item
+                  a.nav-link(href="javascript:;", role="tab") 配送與退貨說明
+            
+            // 商品資訊 : Tab內容
+            .tab-content
+              // a. 商品介紹
+              #intro.tab-pane.active
+                // ~~~假設使用iframe載入內容
+                // ~~~請將<iframe>放入 class.iframe-wrap 中
+                .iframe-wrap
+                  p.align.center
+                    | 感官無疆界，娛樂無拘束，設計超時尚。
+                    br
+                    h2.align.center 極致相機 樂在精彩
+                    h4.align.center Dual Pixel 快速自動對焦
+                    p.align.center 首支搭載單眼相機對焦成像技術的手機，迅捷靈敏的自動相位對焦，拍照或錄影都能迅速對焦，加上快門速度提升，關鍵時刻一手掌握。
+                    br
+                    img.pull-center(alt="商品圖片", src="/public/images/demo/p4_2_1.jpg")
+                    br
+                    img.pull-center(alt="商品圖片", src="/public/images/demo/p4_2_2.jpg")
+                    br
+                    img.pull-center(alt="商品圖片", src="/public/images/demo/p4_2_3.jpg")
+                    br
+                    p.align.center
+                      | ZenFone 3 Ultra 重新定義掌上娛樂。視覺與聽覺的再提升，驚豔畫質、擬真音效及領先業界的視聽科技。您將能感受到流暢的生動影像、真實的動人音質。ZenFone 3 Ultra 更是全球首款智慧型手機支援 USB-C 影像輸出，使您能藉由大屏幕觀看所有手機內容。全面享受影片、音樂、遊戲及閱讀的極致體驗，娛樂掌上機 － ZenFone 3 Ultra!
+
+              // b. 規格
+              #spec.tab-pane
+                // ~~~假設使用iframe載入內容
+                // ~~~請將<iframe>放入 class.iframe-wrap 中
+                .iframe-wrap
+                  - var prdType = [{title: "系統效能", list: [{name: "CPU處理器", text: "64 位元處理器"}, {name: "CPU處理器", text: "iOS 9"}, {name: "記憶體/最大支援記憶體", text: "2GB"}, {name: "內建儲存空間", text: "64GB"}]}, {title: "外觀", list: [{name: "體積(mm)", text: "約2.8 kg"}, {name: "顏色", text: "極致黑"}, {name: "配備", text: "無線控制器 (DUALSHOCK®4)*1、耳機*1 、電源線*1、HDMI 連接線*1、USB 連接線*1"}, {name: "保固期限/維修方式", text: "1年"}]}]
+                  each item in prdType
+                    h4.css-table-caption.default
+                      span.inner-title= item.title
+                    .css-table
+                      each sub in item.list
+                        .css-tr
+                          .css-th.w-f9= sub.name
+                          .css-td= sub.text
+
+              // c. 配送與退貨說明
+              #notice.tab-pane
+                // ~~~假設使用iframe載入內容
+                // ~~~請將<iframe>放入 class.iframe-wrap 中
+                .iframe-wrap
+                  - var prdNotice = [{label: "換貨說明", text: "因考量換貨作業時間冗長，影響您的使用權益，神腦線上未提供換貨服務，如收到商品不符需求或有瑕疵、缺件問題，請於7日鑑賞期內申請退貨後重新上網選購。"}, {label: "取消訂單流程", text: "若您商品訂購錯誤或您想要辦理取消訂單，您可在訂單查詢的頁面點選「取消訂單」的連結，直接線上填寫取消訂單的申請，我們將為您進行訂單取消的作業處理，並於申請完成後1個工作天內回覆Email告知您取消的處理結果，您亦可點選「訂單查詢」查看訂單處理進度。 ．當您申請後若訂單取消成功，訂單查詢的取消訂單欄位將顯示「已取消」。 ．當您要申請時，訂單已無「取消訂單」選項，代表已完成出貨作業，如你確認不需原訂購商品，請您於7日猶豫期內辦理退貨。 若有以下幾種情形，將無法為您取消商品： 1.若在您申請取消訂單的同時，該商品已進入出貨程序，我們將無法為您取消。 2.若您的商品為訂製商品，我們將會為您確認，該商品是否已經製作，若商品已經製作，將無法為您取消。 3.若您訂購商品為電子票券或遊戲點數，序號已進行使用或兌換，將無法為您取消。"}, {label: "退貨說明", text: "神腦線上會員皆可享有商品到貨次日起7日鑑賞期內退貨權益，辦理退貨商品必須是全新狀態且包裝完整，否則將會影響退貨權限。․請您於申請退貨後，以原出貨之包裝紙箱將退貨商品包裝妥當，若原紙箱已遺失，請另使用其他紙箱包覆於商品原廠包裝之外，切勿直接於原廠包裝上黏貼紙張或書寫文字。若原廠包裝損毀將可能影響您的退貨權限。 ․另提醒下列商品將無提供鑑賞期服務： 依「依消費者保護法第19條及行政院消費者保護處公告「通訊交易解除權合理例外情事適用準則」下列商品無享有7天猶豫期服務。 (1)易於腐敗、保存期限較短或解約時即將逾期。 (2)依消費者要求所為之客製化給付。 (3)報紙、期刊或雜誌。 (4)經消費者拆封之影音商品或電腦軟體。 (5)非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供。 (6)已拆封之個人衛生用品。 　有關退貨相關注意事項，可參客服中心FAQ相關說明"}]
+                  //- **
+                  dl.prd-manual
+                    each item in prdNotice
+                      dt
+                        span.inner-title= item.label
+                      dd
+                        p= item.text
+
+          
+          //- ◇◇◇◇◇◇ 額外 ◇◇◇◇◇◇
+          .btn-group
+            a.btn.btn-query-outline(href="", data-dismiss="modal", aria-label="Close") 關閉視窗
+
+  #inline-bs-modal-img.modal.fade(backdrop='static')
+    .modal-dialog
+      .modal-content
+        .modal-header.text-right
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        .modal-body
+          img.modal-loading(src='/public/images/plugins/loading.gif', style='margin: 0 auto;')
+          img.showimage.img-responsive(src='', style='margin: 0 auto; display: none;')
+  script.
+    $(function() {
+
+      /** image url */
+      var modalImage;
+
+      /*
+       * bootstrap modal open image lightbox
+       * 圖片用
+       */
+      $('a[data-target="#inline-bs-modal-img"]').on('click', function() {
+        if ($(this).attr('src') && $(this).attr('src').length > 0) {
+          modalImage = $(this).attr('src');
+        }
+      });
+
+      // show modal
+      $('#inline-bs-modal-img').on('show.bs.modal', function() {
+        $('#inline-bs-modal-img .showimage').prop('src', modalImage).load(function() {
+          $('#inline-bs-modal-img .showimage').show();
+          $('#inline-bs-modal-img .modal-loading').hide();
+        });
+      });
+
+      // close modal
+      $('#inline-bs-modal-img').on('hide.bs.modal', function() {
+        $('#inline-bs-modal-img .modal-loading').show();
+        $('#inline-bs-modal-img .showimage').hide();
+      });
+    });

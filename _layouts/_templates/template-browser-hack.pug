@@ -1,0 +1,24 @@
+//- 滿版遮罩，使用於重大系統提示
+//- ex: IE Upgrade
+
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    title 瀏覽器版本提醒
+
+    // { Meta } 
+    include ../meta.pug
+
+    // { Scripts: Browser version less than 9, use jquery 1.x } 
+    script(src="https://code.jquery.com/jquery-1.12.4.min.js", integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=", crossorigin="anonymous")
+
+    //- 警示頁內容: JS版本
+    //- script(type="text/javascript", src="/public/javascripts/browser.js")
+
+
+  body
+    .browser-upgrade
+
+      //- 警示頁內容: html獨立頁面版本
+      block modalContent
+

@@ -1,0 +1,145 @@
+//- category-main.pug
+//- 
+extends ../../_layouts/_templates/template.pug
+
+//- -------------------------------------
+//- 頁面狀態列標題
+block title
+  title 手機通訊/手機
+
+//- -------------------------------------
+//- 麵包屑
+block breadcrumb
+  include ../../_layouts/_mixins/breadcrumb.pug
+  +breadcrumb_dropdown(crumbCategory)
+
+//- -------------------------------------
+//- header top banner 至頂廣告
+block topbanner
+  include ../../_layouts/_elements/_header-top-bannerbox.pug
+
+//- -------------------------------------
+//- 側邊選單
+block aside
+  include _elements/aside-category.pug
+  +categorySide()
+
+//- -------------------------------------
+//- 主內容
+block main
+  //- *** 載入通用元素
+  include ../../_layouts/_mixins/nav-tabs.pug
+  include ../../_layouts/_mixins/product-item.pug
+  //- ***
+  // AD.rowA 
+  .row
+    //- ** Left
+    .col-md-18
+      .slider.gallery-slider.gallery-slider-size2.h-fix-336.spacing.right
+        ul.gallery-slider2-view
+          each i in [0, 1, 2, 3]
+            li
+              a(data-gaevent="slider-"+(i), href="javascript:;", title="")
+                img(alt="", src="/public/images/demo/category_1_696.jpg")
+    //- ** Right         
+    .col-md-6
+      .widget.widget-default
+        .widget-title
+          span 本周強打
+          .btn-group.pills.pull-right
+            span.divider.fn-sm 1 / 4
+            button.btn.btn-default.btn-mini
+              i.icon.icon-arrow-left
+            button.btn.btn-default.btn-mini
+              i.icon.icon-arrow-right
+        .widget-content.h-fix-296
+          a(href="/dist/product-detail.html")
+            img(src="/public/images/demo/category_1_236.jpg", alt="活動廣告")
+  
+  // AD.rowB 
+  .row
+    // Left 
+    .col-md-18
+      .lead.underline 館長推薦
+      - var featureProduct = [{gid: "group1", group: [{img: "p1_top_1.jpg", title: "ASUS 刷卡回饋$650"}, {img: "p1_top_2.jpg", title: "OPPO 好禮三重送"}, {img: "p1_top_3.jpg", title: "HTC 10 市場最殺"}, {img: "p1_top_4.jpg", title: "LG 兩年保固"}]}, {gid: "group2", group: [{img: "p1_top_5.jpg", title: "OPPO Galaxy Note 免2萬"}, {img: "p1_top_6.jpg", title: "OPPO SONY 新機絕美新色95折"}, {img: "p1_top_7.jpg", title: "OPPO Apple結帳95折 分期零利率"}, {img: "p1_top_8.jpg", title: "HUAWEI 徠卡雙鏡頭"}]}]
+      each item in featureProduct
+        ul.list-group.featured
+          each item2 in item.group
+            li.item
+              a(href="/dist/product-detail.html")
+                img(src="/public/images/demo/"+(item2.img), alt="產品圖")
+                h6.title= item2.title
+    // Right 
+    .col-md-6
+      .widget.widget-default
+        .widget-title
+          span 熱銷紅星
+          .btn-group.pills.pull-right
+            span.divider.fn-sm 1 / 4
+            button.btn.btn-default.btn-mini
+              i.icon.icon-arrow-left
+            button.btn.btn-default.btn-mini
+              i.icon.icon-arrow-right
+        .widget-content
+          ul.list-group
+            - var hotProduct = [{img: "p1_f1_1.jpg", title: "SONY Xperia X Performance (XP) 5吋防水雙卡雙待機", price: "$22,900"}, {img: "p1_f1_2.jpg", title: "Samsung Galaxy Note 5 64G 5.7吋八核心智慧手機", price: "$19,900"}, {img: "p1_f1_3.jpg", title: "Apple iPhone SE 64G 4吋智慧型手機", price: "$19,490"}, {img: "p1_f1_4.jpg", title: "Nextbit Robin 5.2吋六核心智慧型手機", price: "$9,900"}, {img: "p1_f2_1.jpg", title: "ASUS ZenFone 3 ZE552KL (4G/64G) 5.5吋八核心智慧手機", price: "$9,900"}]
+            each item in hotProduct
+              li.item
+                a(href="/dist/product-detail.html")
+                  img.image.thumbnail.small(alt="商品圖片", src="/public/images/demo/"+(item.img))
+                  .content
+                    h5.title= item.title 
+                    .price= item.price
+  
+  // AD.xs  
+  .adbox.adbox-xs
+    img(src="/public/images/demo/category_3_950.jpg", alt="廣告")
+
+  // 促銷樓層 
+  .row.spacing.bottom.sm
+    .nav-tabs.nav-tabs-underline.sticky
+      span.nav-tabs-title 旗艦新機
+      +navTabs("熱銷稀品", "現貨熱銷", "APPLE品牌日")(class="align right")
+    .tab-content
+      - for (i=1; i<=3; i++) {
+        if (i == 1)
+          .tab-pane.active
+            //- 圖片/標題/原價/特價/標籤數
+            +productItem("p3_t_1.jpg", "ASUS ZenFone 3 Ultra ZU680KL (4G/64G) 6.8吋影音智慧手機", "", "$17,900", 2)
+            +productItem("p1_f1_2.jpg", "Samsung Galaxy Note 5 64G 5.7吋八核心智慧手機", "", "$19,990", 1)
+            +productItem("p1_f1_3.jpg", "Apple iPhone SE 64G 4吋智慧型手機", "", "$19,490", 0)
+            +productItem("p1_f1_4.jpg", "Nextbit Robin 5.2吋六核心智慧型手機", "$12,900", "$9,900", 0)
+        else  
+          .tab-pane
+            //- 圖片/標題/原價/特價/標籤數
+            +productItem("p3_t_1.jpg", "ASUS ZenFone 3 Ultra ZU680KL (4G/64G) 6.8吋影音智慧手機", "", "$17,900", 2)
+            +productItem("p1_f1_2.jpg", "Samsung Galaxy Note 5 64G 5.7吋八核心智慧手機", "", "$19,990", 1)
+            +productItem("p1_f1_3.jpg", "Apple iPhone SE 64G 4吋智慧型手機", "", "$19,490", 0)
+            +productItem("p1_f1_4.jpg", "Nextbit Robin 5.2吋六核心智慧型手機", "$12,900", "$9,900", 0)
+      - }
+  
+  // 促銷樓層 
+  .row.spacing.bottom.sm
+    .nav-tabs.nav-tabs-underline.sticky
+      span.nav-tabs-title 入門首選
+      +navTabs("限量新品", "家庭精選", "本週熱門")(class="align right")
+    .tab-content
+      - for (i=1; i<=3; i++) {
+        if (i == 1)
+          .tab-pane.active
+            //- 圖片/標題/原價/特價/標籤數
+            +productItem("p1_f2_1.jpg", "ASUS ZenFone 3 ZE552KL (4G/64G) 5.5吋八核心智慧手機", "$29,800", "$9,990", 1)
+            +productItem("p1_f2_2.jpg", "Acer Liquid Z330 4.5吋4G LTE雙卡智慧機", "", "$3,290", 2)
+            +productItem("p1_f2_3.jpg", "HTC Desire 530 4G LTE 5吋四核心智慧型手機", "", "$4,990", 0)
+            +productItem("p1_f2_4.jpg", "Infocus M350 (2G/16G) 5吋四核心輕旗艦機", "", "$3,790", 0)
+        else  
+          .tab-pane
+            //- 圖片/標題/原價/特價/標籤數
+            +productItem("p1_f2_1.jpg", "ASUS ZenFone 3 ZE552KL (4G/64G) 5.5吋八核心智慧手機", "$29,800", "$9,990", 1)
+            +productItem("p1_f2_2.jpg", "Acer Liquid Z330 4.5吋4G LTE雙卡智慧機", "", "$3,290", 2)
+            +productItem("p1_f2_3.jpg", "HTC Desire 530 4G LTE 5吋四核心智慧型手機", "", "$4,990", 0)
+            +productItem("p1_f2_4.jpg", "Infocus M350 (2G/16G) 5吋四核心輕旗艦機", "", "$3,790", 0)
+      - }
+  
+  //- 品牌列表，第一階段hidden
+  //- include ./_elements/category-main-brands.pug

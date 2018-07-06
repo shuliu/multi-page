@@ -1,0 +1,140 @@
+//- home-aside.pug ** 首頁側欄元素
+//- 
+//- ------------------------------
+//- **
+// 商品分類主選單
+.menu-list-panel.category-menu.primary.shrink
+  .menu-list-title
+    a(href="/dist/category-index.html") 全商品分類
+    i.icon.icon-arrow-down.pull-right
+  include ../_layouts/menu.pug
+  
+//- ------------------------------
+//- **
+// 側欄: S-CARE
+.widget.widget-tertiary
+  .widget-title
+    | S-CARE
+    a.pull-right(href="/dist/article-index.html?與神知識首頁相同版面") 更多文章#[i.icon.icon-arrow-right]
+  .widget-content
+    a(href="/dist/article-detail.html?與神知識相同單一文章頁面")
+      img(alt="文章圖片", src="/public/images/banner/article-banner.jpg")
+      h5.title 4K 影像創新功能滿載！Sony 2016 全新 BRAVIA 液晶電視特色搶先看
+      p.desc 活動時間內到神腦線上Yahoo商城購買Samsung Galaxy S7 edge（水藍色），獨家贈送隨插即用的Samsung Metal OTG手機隨身碟乙個（市價680元），讓你隨時儲存大容量電影、遊戲和照片，不必擔心空間不夠的問題！！
+
+//- ------------------------------
+//- **
+// 側欄: 小矩形廣告A_兩個一組_226*144 (e.g 銀行廣告，O2O主打廣告)
+.adbox-list.js-flop-banner-slider.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      a(href="#1-1") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+    .swiper-slide
+      a(href="#1-2") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-2.png")]
+    .swiper-slide
+      a(href="#1-3") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+  .bx-next
+    i.icon.icon-arrow-right
+  .bx-prev
+    i.icon.icon-arrow-left
+
+.adbox-list.js-flop-banner-slider.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      a(href="#2-1") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+    .swiper-slide
+      a(href="#2-2") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-2.png")]
+    .swiper-slide
+      a(href="#2-3") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+  .bx-next
+    i.icon.icon-arrow-right
+  .bx-prev
+    i.icon.icon-arrow-left
+
+.adbox-list.js-flop-banner-slider.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      a(href="#3-1") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+    .swiper-slide
+      a(href="#3-2") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-2.png")]
+    .swiper-slide
+      a(href="#3-3") #[img(alt="廣告", src="/public/images/banner/medium-rectangle-1.png")]
+  .bx-next
+    i.icon.icon-arrow-right
+  .bx-prev
+    i.icon.icon-arrow-left
+
+//- ------------------------------
+//- **
+// 側欄: 商品促案輪播
+-
+  var asidePrdSlider = [
+    {
+      title: "iPhone6 Plus 犀牛盾防摔保護殼", 
+      image: "/public/images/demo/index_hot_1.jpg"
+    }, {
+      title: "Tunewear Tunefolio 側翻站立皮套", 
+      image: "/public/images/demo/index_hot_2.jpg"
+    }, {
+      title: "TENC 國王新衣保護殼", 
+      image: "/public/images/demo/index_hot_3.jpg"
+    }, {
+      title: "Just Mobile Quattro 真皮背蓋", 
+      image: "/public/images/demo/index_hot_4.jpg"
+    } 
+  ]
+
+.widget.widget-secondary
+  .widget-title
+    span 熱門商品
+    .btn-group.pills.pull-right
+      span.divider.fn-sm.js-product-slider-mini-pages 0 / 0
+      button.btn.btn-default.btn-mini.js-btn-slider-left #[i.icon.icon-arrow-left]
+      button.btn.btn-default.btn-mini.js-btn-slider-right #[i.icon.icon-arrow-right]
+  .widget-content
+    - for (i=1; i<=1; i++)
+      .group-pages
+        ul.list-group
+          each item in asidePrdSlider
+            li.item
+              a(href="/dist/product-detail.html")
+                img.image.thumbnail.small(alt="商品圖片", src=item.image)
+                .content
+                  h5.title= item.title
+                  .price $29,900
+
+//- ------------------------------
+//- **
+// 側欄: 小矩形廣告B_三個一組_226*104 (e.g 線上活動廣告)
+.widget.widget-primary
+  .widget-title
+    | 優惠活動
+    a.pull-right(href="/dist/news-list.html") 更多活動#[i.icon.icon-arrow-right]
+  .widget-content
+    a(href="") #[img(src="/public/images/demo/index_event_1.jpg", alt="商品圖片")]
+    a(href="") #[img(src="/public/images/demo/index_event_2.jpg", alt="商品圖片")]
+    a(href="") #[img(src="/public/images/demo/index_event_3.jpg", alt="商品圖片")]
+    a(href="") #[img(src="/public/images/demo/index_event_2.jpg", alt="商品圖片")]
+    a(href="") #[img(src="/public/images/demo/index_event_3.jpg", alt="商品圖片")]
+
+//- ------------------------------
+//- **
+// 側欄: 神知識
+.widget.widget-secondary
+  .widget-title
+    | 神腦買情報
+    a.pull-right(href="/dist/article-index.html") 更多文章#[i.icon.icon-arrow-right]
+  .widget-content
+    a(href="/dist/article-detail.html")
+      img(alt="文章圖片", src="/public/images/banner/article-banner.jpg")
+      h5.title 4K 影像創新功能滿載！Sony 2016 全新 BRAVIA 液晶電視特色搶先看
+      p.desc 活動時間內到神腦線上Yahoo商城購買Samsung Galaxy S7 edge（水藍色），獨家贈送隨插即用的Samsung Metal OTG手機隨身碟乙個（市價680元），讓你隨時儲存大容量電影、遊戲和照片，不必擔心空間不夠的問題！！
+
+//- ------------------------------
+//- **
+//- // 側欄: 維修服務快捷鍵 :: hide by 20160817
+//- .cube-list.hide
+//-   a.cube-item(href="/dist/member-fix-v1/mb-repair-reserve.html") #[i.icon.icon-repair-a]預約維修
+//-   a.cube-item(href="/dist/member-fix-v1/mb-repair-progress.html") #[i.icon.icon-repair-b]維修進度查詢
+//-   a.cube-item(href="/dist/member-fix-v1/mb-repair-history.html") #[i.icon.icon-repair-c]預約紀錄進度
+//-   a.cube-item(href="/dist/repair/repair-notice.html") #[i.icon.icon-repair-d]維修注意事項

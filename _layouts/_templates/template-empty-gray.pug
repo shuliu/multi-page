@@ -1,0 +1,29 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    block title
+      title 神腦線上
+    include ../meta.pug
+
+  body
+
+    // { Header } 
+    header.simplify
+      include ../header.pug
+
+    // { Wrapper } 
+    .wrapper.fill
+      .container
+        
+        // { Main } 
+        main.empty-page
+          block main
+
+    // { Footer } 
+    footer.footer.simplify
+      include ../footer.pug
+
+
+    //- ********** Script **********
+    //- 
+    include ../scripts.pug

@@ -1,0 +1,457 @@
+//- menu-list (全商品分類)
+//- 
+//- update 20170313:
+    手機通訊
+    周邊、穿戴
+    電腦、平板
+    資訊、數位
+    汽、機車百貨
+    電視、影音
+    生活家電
+    保健、保養
+    食品、票券
+    生活、日用、設計
+-
+  var category_group = [
+    { // Category.A
+      id: "cate-1",
+      name: "超神優惠專區",
+      icon: "icon-cate-a",
+      cate_sub: [
+        {
+          id: "cate-1-1",
+          name: "手機．資訊商品",
+          cate_child: ["手機五折起", "超優特惠商品"]
+        }, {
+          id: "cate-1-2",
+          name: "手機配件",
+          cate_child: ["全面九折優惠"]
+        }, {
+          id: "cate-1-3",
+          name: "家電．影音",
+          cate_child: ["本周主打商品"]
+        }, {
+          id: "cate-1-4",
+          name: "保健保養",
+          cate_child: ["保健品牌四折起", "保養品牌五折起"]
+        }, {
+          id: "cate-1-5",
+          name: "食品票券",
+          cate_child: ["春日美食季五折起", "挑戰票券最低價"]
+        }, {
+          id: "cate-1-6",
+          name: "日用．百貨",
+          cate_child: ["館長推薦精選"]
+        }
+      ]
+    }, 
+    { // Category.B
+      id: "cate-2",
+      name: "手機、平板",
+      icon: "icon-cate-b",
+      cate_sub: [
+        {
+          id: "cate-2-1",
+          name: "精選配件",
+          cate_child: ["隨時歡唱 藍芽麥克風", "OTG．記憶卡", "保護貼", "智慧穿戴．控制裝置", "皮套．包包．背蓋", "線材", "自拍周邊", "藍芽喇叭．耳機", "行動電源．充電器", "通用手機配件"]
+        },
+        {
+          id: "cate-2-2",
+          name: "精選活動",
+          cate_child: ["行動電源優惠精選", "線材特惠組", "亞果福利品下殺", "殼套精選超值價", "預購訂製", "空壓殼+線+膜 超值三合一"]
+        },
+        {
+          id: "cate-2-3",
+          name: "原廠專館",
+          cate_child: ["APPLE", "ASUS", "SAMSUNG", "SONY"]
+        },
+        {
+          id: "cate-2-4",
+          name: "智慧穿戴",
+          cate_child: ["APPLE", "Fitbit", "SAMSUNG", "SONY", "其他廠牌"]
+        },
+        {
+          id: "cate-2-5",
+          name: "周邊品牌",
+          cate_child: ["ADAM亞果元素", "ALTO皮革設計品牌", "Bluelounge美國設計周邊", "Gigastone 儲存類先鋒", "LIFETRONS瑞士設計品牌", "MEGA KING配件專館", "MK馬克 超夯高CP", "RA台灣周邊設計品牌", "TeicNeo金屬質感工藝"]
+        },
+        {
+          id: "cate-2-6",
+          name: "控制裝置",
+          cate_child: ["NextDrive居家裝置"]
+        },
+        {
+          id: "cate-2-7",
+          name: "殼套品牌",
+          cate_child: ["CORESUIT百變殼套", "Ed Hardy潮牌龐克街頭元素", "GRAMAS日本簡約職人殼套", "Kate Spade美國女性精品", "LAUT德國風格殼套", "LIFEPROOF機能保護殼", "Lamborghini 藍寶堅尼品味時尚", "OtterBox美國水獺保護殼", "PGA日本優質品牌殼套", "SOLiDE台灣原創軍規品牌", "Shibaful 日本草地殼套系列", "Shibaful日本草地殼套", "Skinarma日系古著殼套", "Snupped新加坡品牌訂製", "TUMI美國旅行精品殼套", "X-Doria美國功能型殼套", "犀牛盾 耐衝擊保護殼", "野性的呼喚 浮雕軟式手機殼"]
+        },
+        {
+          id: "cate-2-8",
+          name: "行動電源",
+          cate_child: ["ASUS超高CP值行動電源", "EnGenius日韓電芯行動電源", "iNeno台灣行動電源", "LIFETRONS 瑞士領導品牌", "MEGA KING優質行動電源", "Oneoff流線設計行動電源", "Rockfire功能性行動電源", "SONY經典時尚行動電源"]
+        },
+        {
+          id: "cate-2-9",
+          name: "自拍專區",
+          cate_child: ["MOMAX香港創新設計品牌"]
+        },
+        {
+          id: "cate-2-10",
+          name: "耳機喇叭",
+          cate_child: ["hoomia好米亞台灣設計耳機", "Wraps英倫搖滾音樂魂"]
+        },
+        {
+          id: "cate-2-11",
+          name: "卡通授權",
+          cate_child: ["Cheero日本阿愣", "Disney迪士尼授權商品", "GourmanDise日本原裝殼套", "PGA-iJacket日本授權殼套", "Sanrio三麗鷗系列"]
+        }
+      ]
+    }, 
+    { // Category.C
+      id: "cate-3",
+      name: "穿戴、相機、配件",
+      icon: "icon-cate-c",
+      cate_sub: [
+        {
+          id: "cate-3-1",
+          name: "EnGenius",
+          cate_child: ["EnGenius日韓電芯行動電源"]
+        }, {
+          id: "cate-3-2",
+          name: "精選活動",
+          cate_child: ["TUMI.KATE 超殺折扣", "MARVEL星際異攻隊2", "亞果元素新品上市大方送", "滿版膜+空壓殼  驚喜價", "迪士尼自拍棒限量特價", "Cliquefie 鋁合金自拍棒 特價", "Disney通用防水袋下殺299", "Gigastone 全館八五折", "線+插頭 超值組", "亞果元素超值福利品", "自拍桿加廣角鏡頭 超值組"]
+        }, {
+          id: "cate-3-3",
+          name: "數位相機．攝影機",
+          cate_child: ["CANON 專區", "CASIO 專區", "FUJIFILM 專區", "Panasonic 專區", "SONY 專區", "空拍機"]
+        }, {
+          id: "cate-3-4",
+          name: "相機配件",
+          cate_child: ["SUNPOWER 台灣品牌", "相機鏡頭", "防潮家專業防潮箱", "相機其他配件"]
+        }, {
+          id: "cate-3-5",
+          name: "智慧穿戴",
+          cate_child: ["APPLE", "ASUS", "Fitbit", "HUAWEI", "i-gotU ", "SAMSUNG", "SONY", "其他廠牌"]
+        }, {
+          id: "cate-3-6",
+          name: "IOT 智慧裝置",
+          cate_child: ["Apple HomeKit 智慧家居", "NextDrive居家裝置", "WISO 穿戴安全科技"]
+        }, {
+          id: "cate-3-7",
+          name: "耳機喇叭",
+          cate_child: ["CORAL 隨身音響", "ERATO 無線耳機設計款", "hoomia好米亞台灣設計耳機", "Jabees 熱銷款運動藍牙耳機", "Jabra 丹麥優質耳機", "KEF MUO 英國頂尖設計", "LG 樂金 藍芽耳機", "LIFETRONS 金屬質感", "Marley 雷鬼潮流耳機", "NAMO 新品上市", "NuForce 美國高音質耳機", "Plantronics 繽特力", "SONY 日系質感", "Samsung 高音質", "Westone 鑑聽級耳機", "Wraps英倫搖滾音樂魂", "歡唱麥克風", "其他廠牌"]
+        }, {
+          id: "cate-3-8",
+          name: "行動電源",
+          cate_child: ["ASUS超高CP值行動電源", "cheero阿愣行動電源", "Gigastone 立達國際", "HANG 實用造型", "Innowatt 鴻海製造", "iNeno台灣行動電源", "LIFETRONS 瑞士領導品牌", "MEGA KING優質行動電源", "Oneoff流線設計行動電源", "Rockfire功能性行動電源", "SONY經典時尚行動電源", "其他廠牌行動電源"]
+        }, {
+          id: "cate-3-9",
+          name: "自拍周邊",
+          cate_child: ["MOMAX香港創新設計品牌", "夾式鏡頭", "自拍棒", "其他自拍周邊"]
+        }, {
+          id: "cate-3-10",
+          name: "充電．線材",
+          cate_child: ["Micro USB", "Type C", "Lightning", "二合一 線材", "充電座、旅充", "車充"]
+        }, {
+          id: "cate-3-11",
+          name: "iPhone 7 配件",
+          cate_child: ["iPhone 7  4.7保護殼．套", "iPhone 7 4.7保護貼", "iPhone 7 5.5保護殼．套", "iPhone 7 5.5保護貼", "iPhone 7 原廠配件"]
+        }, {
+          id: "cate-3-12",
+          name: "iPhone 6．6S 配件",
+          cate_child: ["iPhone6．6s 4.7保護殼．套", "iPhone6．6s 4.7保護貼", "iPhone6．6s 5.5保護殼．套", "iPhone6．6s 5.5保護貼", "iPhone 6 原廠配件"]
+        }, {
+          id: "cate-3-13",
+          name: "SAMSUNG 配件",
+          cate_child: ["S8 系列 保護殼．套", "C9 保護殼．套", "S7．S7 Edge 保護殼．套", "A系列 保護殼.套", "其他系列 保護殼.套", "SAMSUNG 保護貼", "SAMSUNG 原廠配件"]
+        }, {
+          id: "cate-3-14",
+          name: "HTC 配件",
+          cate_child: ["U系列 保護殼.套", "Desire系列 保護殼.套", "其他系列 保護殼.套", "HTC 保護貼"]
+        }, {
+          id: "cate-3-15",
+          name: "SONY 配件",
+          cate_child: ["XA1 保護殼．套", "XZs 保護殼.套", "X系列 保護殼.套", "SONY其他系列 保護殼.套", "SONY 保護貼"]
+        }
+      ]
+    }, 
+    { // Category.D
+      id: "cate-4",
+      name: "電腦、遊戲、周邊",
+      icon: "icon-cate-d",
+      cate_sub: [
+        {
+          id: "cate-4-1",
+          name: "數位相機．DV",
+          cate_child: ["數位相機．DV", "相機配件", "運動攝影機"]
+        },
+        {
+          id: "cate-4-2",
+          name: "電玩",
+          cate_child: ["遊戲周邊", "遊戲片", "電玩主機"]
+        },
+        {
+          id: "cate-4-3",
+          name: "網路設備",
+          cate_child: ["無線分享器"]
+        },
+        {
+          id: "cate-4-4",
+          name: "周邊商品",
+          cate_child: ["E-BOOKS春季五折起", "其他", "印表機", "喇叭", "外接．行動硬碟", "收納包", "清潔組", "滑鼠", "耳機", "鍵盤", "隨身碟", "電腦螢幕"]
+        },
+        {
+          id: "cate-4-5",
+          name: "周邊耗材",
+          cate_child: ["USB周邊", "電腦線材"]
+        },
+        {
+          id: "cate-4-6",
+          name: "軟體",
+          cate_child: ["電腦軟體"]
+        },
+        {
+          id: "cate-4-7",
+          name: "居家安全",
+          cate_child: ["視訊監控", "電子密碼鎖"]
+        },
+        {
+          id: "cate-4-8",
+          name: "自行車周邊",
+          cate_child: ["自行車錶"]
+        }
+      ]
+    }, 
+    { // Category.E
+      id: "cate-5",
+      name: "電視、影音",
+      icon: "icon-cate-e",
+      cate_sub: [
+        {
+          id: "cate-5-1",
+          name: "行車用品",
+          cate_child: ["汽車周邊", "胎壓偵測器", "行車記錄器", "衛星導航"]
+        },
+        {
+          id: "cate-5-2",
+          name: "行車記錄器品牌",
+          cate_child: ["Mio", "GRAMIN", "PAPAGO!", "大通", "Trywin", "響尾蛇", "NECKER", "行走天下", "CORAL", "CARSCAM"]
+        },
+        {
+          id: "cate-5-3",
+          name: "衛星導航品牌",
+          cate_child: ["GARMIN", "Mio", "Trywin", "CORAL", "PAPAGO!"]
+        }
+      ]
+    }, 
+    { // Category.F
+      id: "cate-6",
+      name: "生活家電",
+      icon: "icon-cate-f",
+      cate_sub: [
+        {
+          id: "cate-6-1",
+          name: "影音設備",
+          cate_child: ["家庭劇院", "液晶電視"]
+        },
+        {
+          id: "cate-6-2",
+          name: "音響設備",
+          cate_child: ["卡拉OK", "手提音響"]
+        },
+        {
+          id: "cate-6-3",
+          name: "影音周邊",
+          cate_child: ["影音線材", "網路電視盒"]
+        }
+      ]
+    }, 
+    { // Category.G
+      id: "cate-7",
+      name: "車用百貨",
+      icon: "icon-cate-g",
+      cate_sub: [
+        {
+          id: "cate-7-1",
+          name: "冰箱．洗衣機",
+          cate_child: ["冰箱", "洗衣機"]
+        },
+        {
+          id: "cate-7-2",
+          name: "廚房家電",
+          cate_child: ["其它", "咖啡機", "微波爐", "快煮壺", "果汁．調理機", "烤箱", "熱水瓶", "電磁．電陶爐", "電鍋．電子鍋"]
+        },
+        {
+          id: "cate-7-3",
+          name: "季節家電",
+          cate_child: ["電暖器", "電風扇"]
+        },
+        {
+          id: "cate-7-4",
+          name: "清潔家電",
+          cate_child: ["吸塵器", "掃地機", "耗材用品"]
+        },
+        {
+          id: "cate-7-5",
+          name: "清淨除濕",
+          cate_child: ["空氣清淨機", "除濕機"]
+        },
+        {
+          id: "cate-7-6",
+          name: "美容家電",
+          cate_child: ["刮鬍刀", "吹風機", "潔膚儀．美容儀"]
+        },
+        {
+          id: "cate-7-7",
+          name: "健康家電",
+          cate_child: ["電動牙刷"]
+        },
+        {
+          id: "cate-7-8",
+          name: "居家家電",
+          cate_child: ["捕蚊燈．拍", "檯燈", "熨斗．掛燙機"]
+        }
+      ]
+    }, 
+    { // Category.H
+      id: "cate-8",
+      name: "保健、保養",
+      icon: "icon-cate-h",
+      cate_sub: [
+        {
+          id: "cate-8-1",
+          name: "促銷活動專區",
+          cate_child: ["超值優惠組", "門市優惠券折抵專區", "保養品特惠", "即期出清折扣", "買就送"]
+        },
+        {
+          id: "cate-8-2",
+          name: "保健食品",
+          cate_child: ["三高掰掰", "換季抗敏", "晶亮有神", "活力充沛", "靈活補氣", "體內環保"]
+        },
+        {
+          id: "cate-8-3",
+          name: "女性保養",
+          cate_child: ["保養調理", "氣色紅潤", "白皙Ｑ彈"]
+        },
+        {
+          id: "cate-8-4",
+          name: "族群保健",
+          cate_child: ["銀髮保健", "男仕保健", "媽咪兒童保健"]
+        },
+        {
+          id: "cate-8-5",
+          name: "清潔保養",
+          cate_child: ["口腔清潔", "嬰幼兒保養", "臉部保養", "臉部清潔", "身體保養", "身體清潔", "髮品"]
+        },
+        {
+          id: "cate-8-6",
+          name: "健康工具",
+          cate_child: ["口罩．濕紙巾", "抗菌．防蚊噴霧"]
+        },
+        {
+          id: "cate-8-7",
+          name: "保健品牌總覽",
+          cate_child: ["babyou姊妹淘", "美國Sundown日落恩賜", "三多", "你滋美得", "台塑生醫保健食品", "台糖生技", "大漢酵素", "得意人生", "日濢", "碧荷柏", "遠東生技", "陽明生醫"]
+        },
+        {
+          id: "cate-8-8",
+          name: "保養品牌總覽",
+          cate_child: ["AiLeiYi", "Akafia garden阿卡菲花園", "台塑生醫 Dr’s Formula 保養品", "薇瓦蒂", "南國工作坊"]
+        }
+      ]
+    }, 
+    { // Category.I
+      id: "cate-9",
+      name: "食品、票券",
+      icon: "icon-cate-i",
+      cate_sub: [
+        {
+          id: "cate-9-1",
+          name: "熱銷活動專區",
+          cate_child: ["在地台灣味限搶九五折", "門市優惠券折抵專區", "套餐票券九五折", "休閒零嘴大折扣", "精選特惠套餐券"]
+        },
+        {
+          id: "cate-9-2",
+          name: "人氣票券",
+          cate_child: ["住宿休憩", "嬉遊享樂", "泡湯美容", "王品集團", "美食套餐"]
+        },
+        {
+          id: "cate-9-3",
+          name: "冷凍．冷藏．生鮮",
+          cate_child: ["水餃．餡餅．包子", "海鮮水產", "火鍋料．調理包", "熟食．滷味．小吃", "鮮蔬水果"]
+        },
+        {
+          id: "cate-9-4",
+          name: "民生食材．南北貨",
+          cate_child: ["乾貨", "果醬．果乾", "油．調味．醬油", "米．麵．雜糧", "罐頭．烘培食材"]
+        },
+        {
+          id: "cate-9-5",
+          name: "飲品．沖調",
+          cate_child: ["奶粉．麥片．沖泡飲品", "甜品", "茶葉．咖啡", "蜂蜜．醋", "飲料．果汁．水"]
+        },
+        {
+          id: "cate-9-6",
+          name: "休閒零食點心",
+          cate_child: ["伴手禮盒", "堅果．養生食品", "海苔．海味", "糖果．巧克力", "蛋糕．甜點．冰品", "豆干．肉乾", "餅乾．米果"]
+        },
+        {
+          id: "cate-9-7",
+          name: "名店城",
+          cate_child: ["王品集團", "愛之味", "紅豆食府", "海鮮王", "第二顆鈕釦", "真鱻貨", "蔥阿伯", "禎祥食品", "軒記-台灣肉乾王", "台灣好味鮮", "柴米夫妻", "紅藜阿祖", "劉一手", "糖鼎養生鋪", "桃米泉", "育成基金會"]
+        }
+      ]
+    }, 
+    { // Category.J
+      id: "cate-10",
+      name: "生活、日用、設計",
+      icon: "icon-cate-j",
+      cate_sub: [
+        {
+          id: "cate-10-1",
+          name: "矚目活動區",
+          cate_child: ["品牌保溫瓶五折起", "精選鍋具一七折起", "門市優惠券折抵專區", "超吸水地墊促銷優惠"]
+        },
+        {
+          id: "cate-10-2",
+          name: "生活設計",
+          cate_child: ["包包配飾", "家居家飾", "居家食器", "戶外生活", "文具工具"]
+        },
+        {
+          id: "cate-10-3",
+          name: "生活設計品牌館",
+          cate_child: ["Novelty 9 世界設計選物", "加拿大 Capsul 萬用隨身夾", "日本Prairie Dog設計包", "澳洲 KeepCup 隨身咖啡杯"]
+        },
+        {
+          id: "cate-10-4",
+          name: "日用百貨",
+          cate_child: ["寵物用品", "居家用品", "時尚流行", "晴雨具", "民生用品", "清潔用品", "辦公用品", "餐廚生活"]
+        },
+        {
+          id: "cate-10-5",
+          name: "日用百貨品牌館",
+          cate_child: ["膳魔師THERMOS", "象印ZOJIRUSHI", "西班牙Pujadas輕鑄鐵鍋", "美國美亞Meyer鍋廚", "韓國NANO鍋廚", "台塑生醫Dr’s Formula", "三麗鷗授權珪藻土地墊"]
+        }
+      ]
+    }
+  ]
+
+
+//- ---------------------------------------------------
+//- Type
+.menu-list.category-list
+  each item, index in category_group
+    .menu-item.category-item(class="category-item-"+(index+1))
+      a.cate-name(href="/dist/category-main.html").
+        #[i.icon(class=item.icon)]#{item.name}
+      .menu-list.menu-sub
+        each item2, index in item.cate_sub
+          .menu-item
+            a.cate-sub-name(href="/dist/category-sub.html").
+              #{item2.name}#[i.icon.icon-arrow-right]
+            .nav.nav-inline
+              each item3, index in item2.cate_child
+                a(href="/dist/category-sub-child.html")= item3
+      
+
+

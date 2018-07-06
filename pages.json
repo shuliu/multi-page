@@ -1,0 +1,22 @@
+[
+  {
+    "template": "mockup/home.pug",
+    "filename": "home.html",
+  },
+  {
+    "template": "mockup/Category/category-index.pug",
+    "filename": "category-index.html",
+  },
+  {
+    "template": "mockup/Category/category-main.pug",
+    "filename": "category-main.html",
+  },
+  {
+    "template": "mockup/Category/category-sub.pug",
+    "filename": "category-sub.html",
+  },
+  {
+    "template": "mockup/Category/category-sub-child.pug",
+    "filename": "category-sub-child.html",
+  },
+]

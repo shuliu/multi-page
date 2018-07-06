@@ -1,0 +1,35 @@
+//- browser-upgrade.pug
+//- 
+extends ../_layouts/_templates/template-browser-hack.pug
+
+//- -------------------------------------
+//- 本文內容
+block modalContent
+  // { 內容區塊 } 
+  .ui-window
+    // { 關閉視窗按鍵 } 
+    .btn-close
+      i.icon.icon-close
+    // { 本文 } 
+    h1.caption 您的瀏覽器該升級囉！
+    .content
+      p 提醒您，神腦線上最佳瀏覽器版本為IE9.0(含)以上，若是您安裝為IE8.0(含)以下瀏覽器版本，可能會有部分功能無法使用。
+      p 
+        | 為了能使用完整的功能與服務，建議您立即進行
+        a.nav-link(href="http://www.windowsupdate.com", target="_blank") IE升級
+        | 或安裝
+        a.nav-link(href="https://www.google.com.tw/chrome/browser/desktop/", target="_blank") Chrome
+        | 、
+        a.nav-link(href="http://mozilla.com.tw/firefox/new/", target="_blank") Firefox
+        | 最新版本，可更順暢使用神腦線上平台，謝謝。
+      
+      .btn-group
+        a.btn.btn-default(href="http://www.windowsupdate.com", target="_blank")
+          i.icon.icon-ie
+          | Internet Explorer
+        a.btn.btn-default(href="https://www.google.com.tw/chrome/browser/desktop/", target="_blank")
+          i.icon.icon-chrome
+          | Google Chrome
+        a.btn.btn-default(href="http://mozilla.com.tw/firefox/new/", target="_blank")
+          i.icon.icon-firefox
+          | Firefox

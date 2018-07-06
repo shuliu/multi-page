@@ -1,0 +1,40 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    block title
+      title 會員中心
+    include ../meta.pug
+
+  body
+
+    // { Header } 
+    header
+      include ../header.pug
+
+    // { Wrapper } 
+    .wrapper
+      .container
+
+        // { Breadcrumb } 
+        block breadcrumb
+        
+        // { Nav-tabs } 
+        block navTabs
+        
+        // { Main } 
+        main.row
+          block main
+
+        // { GoTop } 
+        a.btn-gotop
+          i.icon.icon-arrow-up
+          span TOP
+
+    // { Footer } 
+    footer.footer
+      include ../footer.pug
+
+
+    //- ********** Script **********
+    //- 
+    include ../scripts.pug

@@ -1,0 +1,40 @@
+//- Scripts.pug
+
+if eventTemplate
+  script(type="text/javascript", src="/public/javascripts/vendor/plugins.js")
+
+  // { Browser version less than 9, show alert } 
+  | <!--[if lt IE 9]>
+  | <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  | <script type="text/javascript" src="/public/javascripts/browser.js"></script>
+  | <![endif]-->
+  
+  //- *** for DEMO by SQ
+  // { for Demo :: JS Effect 測試 }
+  script(type="text/javascript", src="/public/javascripts/demo.js")
+
+else
+  //- 包含: bootstrap.js / bxslider.js / pulldownChangeSelector.js
+  script(type="text/javascript", src="/public/javascripts/vendor/plugins.js")
+
+  //- 歷史記錄 slider ()
+  script(type="text/javascript", src="/public/javascripts/history/historySliderGenerator.js")
+
+  // { Browser version less than 9, show alert } 
+  | <!--[if lt IE 9]>
+  | <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  | <script type="text/javascript" src="/public/javascripts/browser.js"></script>
+  | <![endif]-->
+  
+  //- *** for DEMO by SQ
+  // { for Demo :: JS Effect 測試 } 
+  script(type="text/javascript", src="/public/javascripts/demo.js")
+  // { for Demo :: pagination 切換效果 }
+  script(type="text/javascript", src="/public/javascripts/jquery.pagination.js")
+  //- { for Demo :: GoogleMap，google API Key為私人測試用，需自行更新 }
+  //- script(type='text/javascript', src='/public/javascripts/googleMap.js')
+  script(type="text/javascript", src="/public/javascripts/jquery.flexdatalist.min.js")
+  //- *** JX.Add
+  script(type="text/javascript", src="/public/javascripts/main.js")
+  
+

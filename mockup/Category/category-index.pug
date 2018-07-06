@@ -1,0 +1,45 @@
+//- category-index.pug
+//- 
+extends ../../_layouts/_templates/template-single.pug
+
+//- -------------------------------------
+//- 頁面狀態列標題
+block title
+  title 手機通訊/手機
+
+//- -------------------------------------
+//- 麵包屑
+block breadcrumb
+  include ../../_layouts/_mixins/breadcrumb.pug
+  +breadcrumb_new("categoryIndex")
+
+//- -------------------------------------
+//- header top banner 至頂廣告
+block topbanner
+  include ../../_layouts/_elements/_header-top-bannerbox.pug
+
+//- -------------------------------------
+//- 主內容
+block main
+  //- ***
+  // 選單 
+  ul.nav-inline.rainbow
+    each item, index in category_group
+      li.category-item
+        a.cate-name(href="#cate-pin-" + index).
+          #[i.icon(class=item.icon)]#{item.name}
+
+  //- ***
+  // 列表 
+  .list-group.rainbow
+    each item, index in category_group
+      .item(id="cate-pin-"+index)
+        h4.title
+          a(href="/dist/category-main.html")= item.name
+        ul.list-group
+          each item2 in item.cate_sub
+            li.item
+              a.h5(href="/dist/category-sub.html")= item2.name
+              nav.nav-inline
+                each item3 in item2.cate_child
+                  a(href="/dist/category-sub-child.html")= item3

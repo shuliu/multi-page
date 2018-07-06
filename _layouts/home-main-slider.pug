@@ -1,0 +1,206 @@
+//- 
+//- slider 首頁輪播 ( 頁籤 ) : by JX
+- var bannerImages = ["/public/images/demo/banner-950-2.jpg", "/public/images/demo/banner-950.jpg", "/public/images/demo/banner-950-2.jpg", "/public/images/demo/banner-950.jpg", "/public/images/demo/banner-950-2.jpg", "/public/images/demo/banner-950.jpg"]
+- var bannerText = ["開站慶 月月會員禮", "神腦家電送紅包", "電視直播歐洲杯", "消暑配件大盤點", "S7最粉角色", "遊戲裝備放暑價"];
+
+// 輪播 
+.js-gallery-swiper-slider.swiper-container
+  //- Banners
+  .swiper-wrapper
+    each value, index in bannerImages
+      .swiper-slide
+        a(href="#/slider-" + index)
+          img(alt="活動廣告", src=value)
+  //- control
+  .bx-prev.slider-arrow
+    i.icon.icon-arrow-left
+  .bx-next.slider-arrow
+    i.icon.icon-arrow-right
+  div.slider-control.bordered.js-slider-btns
+    each value, index in bannerText
+      a.js-slider-btn(data-slide-index = index, href = "javascript:void(0);", title = value) #{value}
+
+
+//- ------------------------------
+//- ** 促銷樓層 
+- var productLink ="/dist/product-detail.html" 
+- var preorderLink ="/dist/preorder-product.html" 
+-
+  var floors = [
+    {
+      title: "手機平板", 
+      tabs: ["開館大放送", "ASUS新品限量購", "自拍神器", "大4G我最划算"], 
+      banner: "/public/images/demo/floor-vertical-1.jpg", 
+      link: preorderLink,
+      list: [
+        {
+          image: "/public/images/demo/p3_t_1.jpg", 
+          title: "ASUS ZenFone 3 Ultra ZU680KL (4G/64G) 6.8吋影音智慧手機",
+          price: "$17,900", 
+          cost: "$19,900"
+        }, {
+          image: "/public/images/demo/index_f1_3.jpg", 
+          title: "【ASUS】ZenFone Go TV ZB551KL 智慧型手機(2G/16G 冷冽白)", 
+          price: "$5,490", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f1_4.jpg", 
+          title: "【HUAWEI】Mediapad M2 8吋雙喇叭通話平板(贈鋼化保貼+原廠皮套)", 
+          price: "$8,990", 
+          cost: ""
+        }
+      ]
+    }, {
+      title: "車用百貨", 
+      tabs: ["滿折再折扣", "清爽一夏開車必備", "安全出行必備", "愛車裝扮入門款"], 
+      banner: "/public/images/demo/floor-vertical-2.jpg", 
+      link: productLink,
+      list: [
+        {
+          image: "/public/images/demo/index_f2_2.jpg", 
+          title: "Mio MiVue 618 行車記錄器", 
+          price: "$4,490", 
+          cost: "8,990"
+        }, {
+          image: "/public/images/demo/index_f2_3.jpg", 
+          title: "大通D1行動攝影機", 
+          price: "$6,990", 
+          cost: "9,990"
+        }, {
+          image: "/public/images/demo/index_f2_4.jpg", 
+          title: "安伯特貝殼曲面車充擴充座", 
+          price: "$349", 
+          cost: ""
+        }
+      ]
+    }, {
+      title: " 周邊設計", 
+      tabs: ["質感尊寵方案", "夏日郊遊趣", "城市漫遊", "暖心好設計"], 
+      banner: "/public/images/demo/floor-vertical-3.jpg",
+      link: productLink,
+      list: [
+        {
+          image: "/public/images/demo/index_f3_2.jpg", 
+          title: "ASUS ZenWatch 2 (大錶) 快充進化版", 
+          price: "$19,900", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f3_3.jpg", 
+          title: "7-8.4吋商務支架平板保護套", 
+          price: "$19,900", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f3_4.jpg", 
+          title: "SONY 隨身電源 5000 繽紛彩殼CP-V5A", 
+          price: "$19,900", 
+          cost: ""
+        }
+      ]
+    }, {
+      title: "保健．食品", 
+      tabs: ["全館優惠", "能量補給站", "本周最大牌", "安心食材專賣店"], 
+      banner: "/public/images/demo/floor-vertical-4.jpg",
+      link: productLink,
+      list: [
+        {
+          image: "/public/images/demo/index_f4_2.jpg", 
+          title: "【babyou姊妹淘】紅薑黃先生300顆", 
+          price: "$4,389", 
+          cost: "$8,990"
+        }, {
+          image: "/public/images/demo/index_f4_3.jpg", 
+          title: "【美國Sundown日落恩賜】葉黃素+山桑子強化軟膠囊(60粒/瓶)", 
+          price: "$392", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f4_4.jpg", 
+          title: "【三多】明亮系列-葉黃素複方軟膠囊(90粒)", 
+          price: "$790", 
+          cost: ""
+        }
+      ]
+    }, {
+      title: "超神優惠", 
+      tabs: ["全館優惠", "能量補給站", "本周最大牌", "安心食材專賣店"], 
+      banner: "/public/images/demo/floor-vertical-5.jpg",
+      link: productLink,
+      list: [
+        {
+          image: "/public/images/demo/index_f4_2.jpg", 
+          title: "【babyou姊妹淘】紅薑黃先生300顆", 
+          price: "$4,389", 
+          cost: "$8,990"
+        }, {
+          image: "/public/images/demo/index_f4_3.jpg", 
+          title: "【美國Sundown日落恩賜】葉黃素+山桑子強化軟膠囊(60粒/瓶)", 
+          price: "$392", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f4_4.jpg", 
+          title: "【三多】明亮系列-葉黃素複方軟膠囊(90粒)", 
+          price: "$790", 
+          cost: ""
+        }
+      ]
+    }, {
+      title: "新品推薦", 
+      tabs: ["全館優惠", "能量補給站", "本周最大牌", "安心食材專賣店"], 
+      banner: "/public/images/demo/floor-vertical-6.jpg",
+      link: productLink,
+      list: [
+        {
+          image: "/public/images/demo/index_f4_2.jpg", 
+          title: "【babyou姊妹淘】紅薑黃先生300顆", 
+          price: "$4,389", 
+          cost: "$8,990"
+        }, {
+          image: "/public/images/demo/index_f4_3.jpg", 
+          title: "【美國Sundown日落恩賜】葉黃素+山桑子強化軟膠囊(60粒/瓶)", 
+          price: "$392", 
+          cost: ""
+        }, {
+          image: "/public/images/demo/index_f4_4.jpg", 
+          title: "【三多】明亮系列-葉黃素複方軟膠囊(90粒)", 
+          price: "$790", 
+          cost: ""
+        }
+      ]
+    }
+  ]
+
+each item, index in floors
+  .row.floor.js-tab-one-and-three(class="floor-"+(index+1))
+    .nav-tabs
+      span.nav-tabs-title= item.title
+      ul.nav-tabs-list.align.right
+        each tabName, index2 in item.tabs
+          li.nav-tabs-item
+            a(href="javascript:;" data-slide-index=index2)= tabName
+    .tab-content
+      - for (var i=1; i<=4; i++) {
+        .tab-pane
+          .floor-bannerbox
+            a(href="javascript:;")
+              img.bannerbox.vertical(alt="分類廣告", src=item.banner)
+          each product in item.list
+            .product.product-view
+              a(href=item.link)
+                img(alt="商品圖", src=product.image)
+              
+              
+              .content
+                if item.link == preorderLink
+                    .tags-group.product-tags
+                      span.tag.tag-danger.tag-mini 預購商品
+                else if item.link == productLink
+                    .tags-group.product-tags
+                      span.tag.tag-primary.tag-mini 獨家販售
+                      span.tag.tag-secondary.tag-mini 限量新品
+                .title
+                  a(href="/dist/product-detail.html")
+                    | #{product.title}#{i}
+                .price
+                  del.fn-sm= product.cost
+                  b.fn-md= product.price
+      - }
+

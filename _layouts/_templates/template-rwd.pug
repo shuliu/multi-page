@@ -1,0 +1,31 @@
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    block title
+    - var rwdTemplate = true
+    include ../meta.pug
+
+  body.rwd-form
+    //- 載入元件
+    include ../_mixins/rwd-elem.pug
+    
+    //- ****
+    // { Header } 
+    header
+      .container
+        +rwd_header()
+        
+    // { Wrapper } 
+    .wrapper.fill
+      .container
+        block main
+
+    // { Footer } 
+    footer.fill
+      .container
+        +rwd_footer()
+
+
+    //- ********** Script **********
+    //- 
+    include ../scripts.pug
