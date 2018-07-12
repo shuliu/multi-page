@@ -1,14 +1,4 @@
 
-//- extends ../_layouts/_templates/template-home.pug
-
-
-
-//- block main
-//-   //- - var category_group = [{'name':'aaa1', 'id': 1},{'name':'aaa2', 'id': 2},{'name':'aaa3', 'id': 3}]
-//-   each item, index in category_group || []
-//-     ="aaaaaa"
-//-     <br/>
-
 include ../_layouts/_variable.pug
 
 doctype html
@@ -16,22 +6,17 @@ html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
   head
     title 神腦線上
     include ../_layouts/meta.pug
-    // /festivals/xmas 聖誕節慶
-    link(rel="stylesheet", type="text/css", href="/public/stylesheets/festivals/xmas.css")
 
   body.home
 
     // { Header } 
-    header.festival
+    header
       
       //- -------------------------------------
       //- header top banner 至頂廣告
-      block topbanner
-        include ../_layouts/_elements/_header-top-bannerbox.pug
+      include ../_layouts/_elements/_header-top-bannerbox.pug
 
       //- **
-      if navbarAD = false
-      if logoHome = true
       include ../_layouts/header.pug
 
     // { Wrapper }
@@ -40,16 +25,16 @@ html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
 
         // { Aside }
         aside.col-md-5
-          block aside
+          | menu box
 
         // { Main }
         main.col-md-19
-          block main
+          | content box
 
           //- - var category_group = [{'name':'aaa1', 'id': 1},{'name':'aaa2', 'id': 2},{'name':'aaa3', 'id': 3}]
-          each item, index in category_group
-            ="aaaaaa"
-            <br/>
+          //- each item, index in category_group
+          //-   ="aaaaaa"
+          //-   <br/>
 
         // { Fixed AD }
         .adbox.adbox-rail.fixed
