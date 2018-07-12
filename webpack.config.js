@@ -5,10 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let pages = [];
-// Our function that generates our html plugins
+// 需要忽略的資料夾
+let pageIgnore = ['try'];
+
+// 搜尋目錄中檔案並 gen HtmlWebPackPlugin
 function generateHtmlPlugins(templateDir) {
   // Read files in template directory
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  const extensionName = 'pug';
 
   templateFiles.forEach(item => {
     // Split names and extension
@@ -16,19 +20,24 @@ function generateHtmlPlugins(templateDir) {
     const name = parts[0] || undefined;
     const extension = parts[1] || undefined;
 
-    if( extension === undefined ) {
+    // 忽略沒檔名且第一個字為底線的
+    let checkName = name !== undefined && name.substr(0, 1) !== '_';
+    // 忽略 pageIgnore 內的資料夾及資料夾名第一次為底線的
+    let checkDirectoryName = extension === undefined &&
+      pageIgnore.indexOf(name) === -1 &&
+      name.substr(0, 1) !== '_';
+
+    if (checkDirectoryName) {
       var newTemplateDir = templateDir + '/' + name;
       generateHtmlPlugins(newTemplateDir);
     }
 
     // Create new HtmlWebPackPlugin with options
-    // else 
-    if( name !== undefined && extension !== undefined ) {
+    if (name !== undefined && checkName && extension === extensionName) {
       pages.push(new HtmlWebPackPlugin({
-          filename: `${name}.html`,
-          template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
-        })
-      );
+        filename: `${name}.html`,
+        template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+      }));
     }
   });
   return pages;
@@ -36,7 +45,7 @@ function generateHtmlPlugins(templateDir) {
 
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./mockup') || [];
-console.log(htmlPlugins);
+
 const pug = {
   test: /\.pug$/,
   use: ['html-loader?attrs=false', 'pug-html-loader?pretty']
@@ -53,8 +62,7 @@ let config = {
     publicPath: '/dist'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -85,36 +93,6 @@ let config = {
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清除之前產生的文件
-
-    // new HtmlWebPackPlugin({
-    //   template: 'mockup/index.pug',
-    //   filename: 'index.html'
-    // }),
-
-    // new HtmlWebPackPlugin({
-    //   template: 'mockup/home.pug',
-    //   filename: 'home.html',
-    //   // publicPath: 'dist'
-    //   // chunks: ['my-main'] // 打包時只打包 main.js，可通過此方法實現多頁面開發
-    // }),
-    // new HtmlWebPackPlugin({
-    //   template: 'mockup/Category/category-index.pug',
-    //   filename: 'category-index.html'
-    // }),
-    // new HtmlWebPackPlugin({
-    //   template: 'mockup/Category/category-main.pug',
-    //   filename: 'category-main.html'
-    // }),
-
-    // new HtmlWebPackPlugin({
-    //   chunks: ["common", "[name]"],
-    //   filename: "[name].html",
-    //   template: "!!html-webpack-plugin/lib/loader.js!./mockup/[name].pug",
-    //   inject: "body",
-    //   title: function(id) {
-    //       return titles[id];
-    //   } // or maybe a shorthand like title: titles?
-    // })
   ].concat(htmlPlugins)
 };
 
