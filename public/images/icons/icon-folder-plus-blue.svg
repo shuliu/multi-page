@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-folder-plus-blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="member" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-folder-plus-blue" fill="#0090D4">
+            <path d="M57.6,14.6 L31.2,14.6 L25.92,7.5632 C24.72,5.9568 22.8032,5 20.8,5 L6.4,5 C2.8704,5 0,7.8736 0,11.4 L0,53 C0,56.5296 2.8704,59.4 6.4,59.4 L57.6,59.4 C61.1296,59.4 64,56.5296 64,53 L64,21 C64,17.4736 61.1296,14.6 57.6,14.6 Z M6.4,53 L6.4,11.4 L20.8,11.4 L26.08,18.44 C27.28,20.0432 29.1968,21 31.2,21 L57.6,21 L57.6032,53 L6.4,53 Z M35.2,24.2 L28.8,24.2 L28.8,33.8 L19.2,33.8 L19.2,40.2 L28.8,40.2 L28.8,49.8 L35.2,49.8 L35.2,40.2 L44.8,40.2 L44.8,33.8 L35.2,33.8 L35.2,24.2 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

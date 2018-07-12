@@ -1,3 +1,5 @@
+include ../_variable.pug
+
 doctype html
 html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
   head
@@ -52,24 +54,26 @@ html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
     footer.footer.festival
       include ../footer.pug
 
-    //- index sad model
-    #index-big-banner-modal.modal.fade.in(role='dialog', data-backdrop='static', data-show='true', style='display: none;')
-      .modal-dialog.indexBanner
-        .modal-content
-          .modal-header.text-left
-            button.close(type='button', data-dismiss='modal', aria-hidden='true')
-              i.icon.icon-close
-          .modal-body
-            a(href='https://event.senao.com.tw/esalleventyearend_20171201000/?date=171205&loc=IH&id=8935', target='_blank')
-              img.showimage.img-responsive(src='https://static.senao.com.tw/uploadfile/banner_images/ECOMS/IH_20171205183704.jpg', alt='年終酬賓鈔回饋')
 
-    //- snow 下雪
-    //- 最大 100 顆且需要對應 _snow.scss 的 $snowElements 兩邊一致
-    //.snowBox
-      -for (var i=1; i<=100; i++)
-        .snow-element 
 
-    //- ********** Script **********
-    //- 
-    include ../scripts.pug
-    script(type="text/javascript", src="/public/javascripts/slider-bxslider.js")
+    //- //- index sad model
+    //- #index-big-banner-modal.modal.fade.in(role='dialog', data-backdrop='static', data-show='true', style='display: none;')
+    //-   .modal-dialog.indexBanner
+    //-     .modal-content
+    //-       .modal-header.text-left
+    //-         button.close(type='button', data-dismiss='modal', aria-hidden='true')
+    //-           i.icon.icon-close
+    //-       .modal-body
+    //-         a(href='https://event.senao.com.tw/esalleventyearend_20171201000/?date=171205&loc=IH&id=8935', target='_blank')
+    //-           img.showimage.img-responsive(src='https://static.senao.com.tw/uploadfile/banner_images/ECOMS/IH_20171205183704.jpg', alt='年終酬賓鈔回饋')
+
+    //- //- snow 下雪
+    //- //- 最大 100 顆且需要對應 _snow.scss 的 $snowElements 兩邊一致
+    //- //.snowBox
+    //-   -for (var i=1; i<=100; i++)
+    //-     .snow-element 
+
+    //- //- ********** Script **********
+    //- //- 
+    //- include ../scripts.pug
+    //- script(type="text/javascript", src="/public/javascripts/slider-bxslider.js")

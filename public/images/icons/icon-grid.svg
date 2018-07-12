@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-grid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="base" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-grid" fill="#B3B9C5">
+            <path d="M2,2 L27,2 L27,27 L2,27 L2,2 Z M37,2 L62,2 L62,27 L37,27 L37,2 Z M2,37 L27,37 L27,62 L2,62 L2,37 Z M37,37 L62,37 L62,62 L37,62 L37,37 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

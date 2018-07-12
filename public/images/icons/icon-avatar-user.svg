@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>user headphone.1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="avatar">
+            <circle id="Oval-1" fill="#E9EAEA" cx="40" cy="40" r="40"></circle>
+            <g id="user-2" transform="translate(20.000000, 19.000000)" fill="#FFFFFF">
+                <g id="Layer_1">
+                    <path d="M27,24.6666667 C30.8333333,22.3333333 33.3333333,18.1666667 33.3333333,13.3333333 C33.3333333,6 27.3333333,0 20,0 C12.6666667,0 6.66666667,6 6.66666667,13.3333333 C6.66666667,18.1666667 9.16666667,22.3333333 13,24.6666667 C6.33333333,27.1666667 1.33333333,33 0,40 L3.33333333,40 C5,32.3333333 11.8333333,26.6666667 20,26.6666667 C28.1666667,26.6666667 35,32.3333333 36.6666667,40 L40,40 C38.6666667,32.8333333 33.6666667,27 27,24.6666667 L27,24.6666667 Z M10,13.3333333 C10,7.83333333 14.5,3.33333333 20,3.33333333 C25.5,3.33333333 30,7.83333333 30,13.3333333 C30,18.8333333 25.5,23.3333333 20,23.3333333 C14.5,23.3333333 10,18.8333333 10,13.3333333 L10,13.3333333 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

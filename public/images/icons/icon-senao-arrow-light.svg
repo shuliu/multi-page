@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-senao-arrow-light</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="member" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-senao-arrow-light" fill="#A3A5A6">
+            <path d="M33.3586617,28.2054457 L32.5902463,36.6580156 L32.8384004,36.8141898 C33.3644105,37.1466588 44.3607996,44.0920997 47.362602,45.9594833 C43.9191044,47.8067464 30.1633182,55.276281 29.5117939,55.6298288 L29.2952579,55.747678 L28.2911439,64 L56.6305354,48.7859491 L57.2715204,43.4491985 L33.3586617,28.2054457 Z M31.3909625,26.8590899 L31.1380178,26.7067482 C31.0115454,26.6300983 19.8331128,19.8781985 16.8140641,18.043391 C20.2633104,16.1942117 34.0123897,8.72850958 34.6629559,8.37496182 L34.8804501,8.25711257 L35.884564,-7.10542736e-15 L7.64002683,15.315612 L7,20.6561952 L30.7317732,35.313576 L31.3909625,26.8590899 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

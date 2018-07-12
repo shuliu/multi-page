@@ -1,0 +1,72 @@
+
+//- extends ../_layouts/_templates/template-home.pug
+
+
+
+//- block main
+//-   //- - var category_group = [{'name':'aaa1', 'id': 1},{'name':'aaa2', 'id': 2},{'name':'aaa3', 'id': 3}]
+//-   each item, index in category_group || []
+//-     ="aaaaaa"
+//-     <br/>
+
+include ../_layouts/_variable.pug
+
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    title 神腦線上
+    include ../_layouts/meta.pug
+    // /festivals/xmas 聖誕節慶
+    link(rel="stylesheet", type="text/css", href="/public/stylesheets/festivals/xmas.css")
+
+  body.home
+
+    // { Header } 
+    header.festival
+      
+      //- -------------------------------------
+      //- header top banner 至頂廣告
+      block topbanner
+        include ../_layouts/_elements/_header-top-bannerbox.pug
+
+      //- **
+      if navbarAD = false
+      if logoHome = true
+      include ../_layouts/header.pug
+
+    // { Wrapper }
+    .wrapper.fill
+      .container
+
+        // { Aside }
+        aside.col-md-5
+          block aside
+
+        // { Main }
+        main.col-md-19
+          block main
+
+          //- - var category_group = [{'name':'aaa1', 'id': 1},{'name':'aaa2', 'id': 2},{'name':'aaa3', 'id': 3}]
+          each item, index in category_group
+            ="aaaaaa"
+            <br/>
+
+        // { Fixed AD }
+        .adbox.adbox-rail.fixed
+          .clearfix
+            a.btn-close(href="")
+              i.icon.icon-close
+          figure
+            a(href="")
+              p.figure-title 下載APP 天天刮天天抽
+              img.figure-img(src="/public/images/app-download-qrcode.svg", alt="")
+
+        // { GoTop } 
+        a.btn-gotop
+          i.icon.icon-arrow-up
+          span TOP
+
+    // { Footer } 
+    footer.footer.festival
+      include ../_layouts/footer.pug
+

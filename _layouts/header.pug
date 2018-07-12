@@ -14,99 +14,99 @@ include ../_layouts/_mixins/header-search.pug
 include ../_layouts/_mixins/header-top-nav.pug
 
 
-// ### 主選單 
-if Membrer2RHide
- .header-navbar.hide
-else
- .header-navbar
-  .container
-    // ++++ Left ++++ 
-    .hc-left
-      //- Brand LOGO
-      a.site-logo(href="/dist/home.html", title="神腦線上購物")
-        if logoHome 
-            img(src="/public/images/logo_transparent_18q1.png", alt="神腦線上購物", width="330", height="110")
-        else
-            img(src="/public/images/logo_transparent.png", alt="神腦線上購物", width="194", height="110")
+//- // ### 主選單 
+//- if Membrer2RHide
+//-  .header-navbar.hide
+//- else
+//-  .header-navbar
+//-   .container
+//-     // ++++ Left ++++ 
+//-     .hc-left
+//-       //- Brand LOGO
+//-       a.site-logo(href="/dist/home.html", title="神腦線上購物")
+//-         if logoHome 
+//-             img(src="/public/images/logo_transparent_18q1.png", alt="神腦線上購物", width="330", height="110")
+//-         else
+//-             img(src="/public/images/logo_transparent.png", alt="神腦線上購物", width="194", height="110")
 
-      //- 與logo並列的活動節慶AD :: update 11/17
-      if navbarAD
-        a.adbox-sm-rectangle(href="", title="活動標題")
-          img(src="/public/images/home/topbanner_sm_rectangle_18q1-2.png", alt="活動標題")
+//-       //- 與logo並列的活動節慶AD :: update 11/17
+//-       if navbarAD
+//-         a.adbox-sm-rectangle(href="", title="活動標題")
+//-           img(src="/public/images/home/topbanner_sm_rectangle_18q1-2.png", alt="活動標題")
 
-      //- 主選單
-      .header-category.js-header-menu
-        .popover-nav
-          a.btn.btn-default(href="javascript:;", title="全商品分類")
-            i.icon.icon-menu.fn-xl 
-            i.icon.icon-caret-down
-        // 商品下選單 
-        .popover.bottom
-          i.caret-arrow
-          include ./menu.pug
+//-       //- 主選單
+//-       .header-category.js-header-menu
+//-         .popover-nav
+//-           a.btn.btn-default(href="javascript:;", title="全商品分類")
+//-             i.icon.icon-menu.fn-xl 
+//-             i.icon.icon-caret-down
+//-         // 商品下選單 
+//-         .popover.bottom
+//-           i.caret-arrow
+//-           include ./menu.pug
     
-    // ++++ Right ++++ 
-    .hc-right
-      .nav-account
-        i.icon.icon-user-outline
-        ul.nav
-          li
-            if MemberIslogin
-              a.has-user-name(href="/dist/member-fix-v1/mb-profile-edit.html") 王小明
-              span.spacing.sm ︱
-              a(href="javascript:;") 登出
-            else
-              a(href="/dist/login.html") 登入
-              span.spacing.sm ︱
-              a(href="/dist/join-step1.html") 註冊
-          li
-            .popover-hover
-              .popover-nav #[a(href="/dist/member-fix-v1/mb-home.html") 我的帳戶#[i.icon.icon-arrow-down]]
-              .popover.bottom
-                .popover-arrow
-                .nav.nav-list
-                  //- a(href="/dist/member-fix-v1/mb-profile-edit.html", title="個人資料") 個人資料
-                  a(href="/dist/order-fix-v1/order-list.html", title="訂單查詢") 訂單查詢
-                  a(href="/dist/ticket-fix-v1/ticket-list.html", title="電子票券") 電子票券
-                  a(href="/dist/member-fix-v1/mb-coupon.html", title="優惠券") 優惠券
-                  a(href="/dist/member-fix-v1/mb-bonus.html", title="紅利點數") 紅利點數
-                  a(href="/dist/member-fix-v1/mb-mail-inbox.html", title="個人訊息") 個人訊息#[b.notice.fn-mini.spacing.left.mini (4)]
-      .nav-cart
-        i.icon.icon-cart-outline
-        ul.nav
-          li 商品#[a.badge.badge-danger.circle(href="") 8]項
-          li
-            .popover-hover
-              .popover-nav 購物車#[i.icon.icon-arrow-down]
-              .popover.bottom
-                .popover-arrow
-                .nav.nav-list
-                  a(href="/dist/cart-list.html") 一般配送#[b.value 4]
-                  a(href="/dist/cart-list-store.html") 限神腦門市#[b.value 1]
-                  a(href="/dist/cart-list-delivery.html") 限宅配#[b.value 3]
-                  a(href="/dist/cart-list-ticket.html") 電子票券#[b.value 12]
-                a.btn.btn-secondary.btn-sm.btn-block(href="/dist/cart-list.html") 結帳
+//-     // ++++ Right ++++ 
+//-     .hc-right
+//-       .nav-account
+//-         i.icon.icon-user-outline
+//-         ul.nav
+//-           li
+//-             if MemberIslogin
+//-               a.has-user-name(href="/dist/member-fix-v1/mb-profile-edit.html") 王小明
+//-               span.spacing.sm ︱
+//-               a(href="javascript:;") 登出
+//-             else
+//-               a(href="/dist/login.html") 登入
+//-               span.spacing.sm ︱
+//-               a(href="/dist/join-step1.html") 註冊
+//-           li
+//-             .popover-hover
+//-               .popover-nav #[a(href="/dist/member-fix-v1/mb-home.html") 我的帳戶#[i.icon.icon-arrow-down]]
+//-               .popover.bottom
+//-                 .popover-arrow
+//-                 .nav.nav-list
+//-                   //- a(href="/dist/member-fix-v1/mb-profile-edit.html", title="個人資料") 個人資料
+//-                   a(href="/dist/order-fix-v1/order-list.html", title="訂單查詢") 訂單查詢
+//-                   a(href="/dist/ticket-fix-v1/ticket-list.html", title="電子票券") 電子票券
+//-                   a(href="/dist/member-fix-v1/mb-coupon.html", title="優惠券") 優惠券
+//-                   a(href="/dist/member-fix-v1/mb-bonus.html", title="紅利點數") 紅利點數
+//-                   a(href="/dist/member-fix-v1/mb-mail-inbox.html", title="個人訊息") 個人訊息#[b.notice.fn-mini.spacing.left.mini (4)]
+//-       .nav-cart
+//-         i.icon.icon-cart-outline
+//-         ul.nav
+//-           li 商品#[a.badge.badge-danger.circle(href="") 8]項
+//-           li
+//-             .popover-hover
+//-               .popover-nav 購物車#[i.icon.icon-arrow-down]
+//-               .popover.bottom
+//-                 .popover-arrow
+//-                 .nav.nav-list
+//-                   a(href="/dist/cart-list.html") 一般配送#[b.value 4]
+//-                   a(href="/dist/cart-list-store.html") 限神腦門市#[b.value 1]
+//-                   a(href="/dist/cart-list-delivery.html") 限宅配#[b.value 3]
+//-                   a(href="/dist/cart-list-ticket.html") 電子票券#[b.value 12]
+//-                 a.btn.btn-secondary.btn-sm.btn-block(href="/dist/cart-list.html") 結帳
     
-    // ++++ SearchBar ++++ 
-    .hc-middle
-      //- 搜尋列
-      if article
-        form.search-bar-group(action="/dist/article-search.html", method="get")
-          .input-group.search-bar-articles
-            input.blue.has-icon-search(maxlength="60", name="search", placeholder="您今天想找什麼？", type="search")
-            button.btn.btn-query 找文章
+//-     // ++++ SearchBar ++++ 
+//-     .hc-middle
+//-       //- 搜尋列
+//-       if article
+//-         form.search-bar-group(action="/dist/article-search.html", method="get")
+//-           .input-group.search-bar-articles
+//-             input.blue.has-icon-search(maxlength="60", name="search", placeholder="您今天想找什麼？", type="search")
+//-             button.btn.btn-query 找文章
 
-          //- 下拉展開關鍵字列表
-          +search_dropdown()
+//-           //- 下拉展開關鍵字列表
+//-           +search_dropdown()
 
-          //- 熱門關鍵字
-          +search_keyword()
+//-           //- 熱門關鍵字
+//-           +search_keyword()
 
-      else
+//-       else
 
-        //- 預設搜尋框
-        include ../_layouts/_elements/_header-searchbar.pug
+//-         //- 預設搜尋框
+//-         include ../_layouts/_elements/_header-searchbar.pug
 
-        //- 指定分類搜尋 且 可自動帶入關鍵字的 搜尋框
-        //- include ../_layouts/_elements/_header-searchbar-searchCategoryAndAutocomplete.pug
+//-         //- 指定分類搜尋 且 可自動帶入關鍵字的 搜尋框
+//-         //- include ../_layouts/_elements/_header-searchbar-searchCategoryAndAutocomplete.pug
 

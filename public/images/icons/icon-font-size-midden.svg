@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-font-size-midden</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-fontsize-midden">
+            <g id="Page-1">
+                <g id="icon-fontsize-midden">
+                    <rect id="icon-font-size-midden" x="0" y="0" width="85" height="85"></rect>
+                    <circle id="Oval" stroke="#0090D4" stroke-width="5" cx="43" cy="43" r="37"></circle>
+                    <path d="M39.864,13.264 L39.864,24.336 L17.144,24.336 L17.144,55.248 L23.224,55.248 L23.224,51.6 L39.864,51.6 L39.864,73.04 L46.136,73.04 L46.136,51.6 L62.84,51.6 L62.84,55.248 L68.92,55.248 L68.92,24.336 L46.136,24.336 L46.136,13.264 L39.864,13.264 Z M23.224,45.648 L23.224,30.288 L39.864,30.288 L39.864,45.648 L23.224,45.648 Z M46.136,45.648 L46.136,30.288 L62.84,30.288 L62.84,45.648 L46.136,45.648 Z" id="中" stroke="#0090D4" fill="#0090D4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

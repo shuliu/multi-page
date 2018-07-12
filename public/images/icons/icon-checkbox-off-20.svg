@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 333</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="2" y="2" width="20" height="20" rx="2"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="checkbox" transform="translate(-2.000000, -2.000000)">
+            <use id="icon-checkbox-off" stroke="#DCDDDE" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" style="mix-blend-mode: darken;" xlink:href="#path-1"></use>
+            <path d="M2.90909091,3.81014091 L2.90909091,3.81014091 L2.90909091,20.1898591 C2.90909091,20.6884375 3.3118135,21.0909091 3.81014091,21.0909091 L20.1898591,21.0909091 C20.6884375,21.0909091 21.0909091,20.6881865 21.0909091,20.1898591 L21.0909091,3.81014091 C21.0909091,3.31156251 20.6881865,2.90909091 20.1898591,2.90909091 L3.81014091,2.90909091 C3.31156251,2.90909091 2.90909091,3.3118135 2.90909091,3.81014091 L2.90909091,3.81014091 Z M2,3.81014091 C2,2.81042769 2.8087945,2 3.81014091,2 L20.1898591,2 C21.1895723,2 22,2.8087945 22,3.81014091 L22,20.1898591 C22,21.1895723 21.1912055,22 20.1898591,22 L3.81014091,22 C2.81042769,22 2,21.1912055 2,20.1898591 L2,3.81014091 L2,3.81014091 Z" id="icon-checkbox-off" fill="#A2A5A7"></path>
+        </g>
+    </g>
+</svg>

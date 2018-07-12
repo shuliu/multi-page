@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-box-silver</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="cart/order/product" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-box-silver" fill="#DCDDDE">
+            <path d="M59.7,13.225 L33.6,0.225 C32.9,-0.075 32.1,-0.075 31.4,0.225 L5.6,13.225 C4.6,13.625 4,14.525 4,15.525 L4,48.025 C4,49.025 4.6,49.825 5.4,50.225 L31.4,63.325 C32.1,63.625 32.9,63.625 33.6,63.325 L59.4,50.325 C60.4,49.925 61,49.025 61,48.025 L61,15.425 C61,14.525 60.5,13.625 59.7,13.225 L59.7,13.225 Z M56.2,46.525 L34,57.625 L34,29.425 C41.4,25.725 48.8,22.025 56.2,18.325 L56.2,46.525 Z M32.5,26.825 L10.8,16.025 L20.6,11.125 L42.2,21.925 L32.5,26.825 Z M31,57.625 L8.9,46.525 L8.9,18.325 L31,29.425 L31,57.625 Z M32.5,5.125 L54.2,16.125 L45.5,20.425 L23.8,9.525 L32.5,5.125 Z" id="Page-1"></path>
+        </g>
+    </g>
+</svg>

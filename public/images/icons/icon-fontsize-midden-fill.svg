@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-fontsize-midden-fill</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="32" cy="32" r="32"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="64" height="64" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="header" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-fontsize-midden-fill">
+            <use id="Oval" stroke="#0090D4" mask="url(#mask-2)" stroke-width="10" fill="#D8D8D8" xlink:href="#path-1"></use>
+            <path d="M30.0152471,9.98701176 L30.0152471,18.3235765 L12.9084235,18.3235765 L12.9084235,41.5984941 L17.4863059,41.5984941 L17.4863059,38.8517647 L30.0152471,38.8517647 L30.0152471,54.9948235 L34.7376941,54.9948235 L34.7376941,38.8517647 L47.3148235,38.8517647 L47.3148235,41.5984941 L51.8927059,41.5984941 L51.8927059,18.3235765 L34.7376941,18.3235765 L34.7376941,9.98701176 L30.0152471,9.98701176 L30.0152471,9.98701176 Z M17.4863059,34.3702588 L17.4863059,22.8050824 L30.0152471,22.8050824 L30.0152471,34.3702588 L17.4863059,34.3702588 L17.4863059,34.3702588 Z M34.7376941,34.3702588 L34.7376941,22.8050824 L47.3148235,22.8050824 L47.3148235,34.3702588 L34.7376941,34.3702588 L34.7376941,34.3702588 Z" id="中" fill="#0090D4"></path>
+        </g>
+    </g>
+</svg>

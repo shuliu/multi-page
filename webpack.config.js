@@ -11,12 +11,12 @@ const pug = {
 
 let config = {
   entry: {
-    main: './src/js/index.js'
+    app: './src/js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, ''),
     // filename: '[name].js',//'[name]-[chunkhash].js'
-    publicPath: 'dist'
+    publicPath: '/dist'
   },
   module: {
     rules: [
@@ -29,7 +29,7 @@ let config = {
       },
       {
         test: /\.pug$/,
-        use: 'pug-loader?pretty=true',
+        use: 'pug-loader?pretty=true&self=true',
       },
       {
         test: /\.css$/,
@@ -53,19 +53,24 @@ let config = {
     // new CleanWebpackPlugin(['dist']), // 清除之前產生的文件
 
     new HtmlWebPackPlugin({
-      template: 'mockup/home.pug',
-      filename: 'home.html',
-      // publicPath: 'dist'
-      // chunks: ['my-main'] // 打包時只打包 main.js，可通過此方法實現多頁面開發
+      template: 'mockup/index.pug',
+      filename: 'index.html'
     }),
-    new HtmlWebPackPlugin({
-      template: 'mockup/Category/category-index.pug',
-      filename: 'category-index.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: 'mockup/Category/category-main.pug',
-      filename: 'category-main.html'
-    }),
+
+    // new HtmlWebPackPlugin({
+    //   template: 'mockup/home.pug',
+    //   filename: 'home.html',
+    //   // publicPath: 'dist'
+    //   // chunks: ['my-main'] // 打包時只打包 main.js，可通過此方法實現多頁面開發
+    // }),
+    // new HtmlWebPackPlugin({
+    //   template: 'mockup/Category/category-index.pug',
+    //   filename: 'category-index.html'
+    // }),
+    // new HtmlWebPackPlugin({
+    //   template: 'mockup/Category/category-main.pug',
+    //   filename: 'category-main.html'
+    // }),
 
     // new HtmlWebPackPlugin({
     //   chunks: ["common", "[name]"],
