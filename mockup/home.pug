@@ -1,13 +1,57 @@
-//- order-list.pug
-//- 
-extends ../_layouts/_templates/template-home.pug
 
-//- -------------------------------------
-//- 側邊選單
-block aside
-  include ../_layouts/_home-aside.pug
+include ../_layouts/_variable.pug
 
-//- -------------------------------------
-//- 側邊選單
-block main
-  include ../_layouts/home-main.pug
+doctype html
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="zh-tw", lang="zh-tw")
+  head
+    title 神腦線上
+    include ../_layouts/meta.pug
+
+  body.home
+
+    // { Header } 
+    header
+      
+      //- -------------------------------------
+      //- header top banner 至頂廣告
+      include ../_layouts/_elements/_header-top-bannerbox.pug
+
+      //- **
+      include ../_layouts/header.pug
+
+    // { Wrapper }
+    .wrapper.fill
+      .container
+
+        // { Aside }
+        aside.col-md-5
+          | menu box
+
+        // { Main }
+        main.col-md-19
+          | content box
+
+          //- - var category_group = [{'name':'aaa1', 'id': 1},{'name':'aaa2', 'id': 2},{'name':'aaa3', 'id': 3}]
+          //- each item, index in category_group
+          //-   ="aaaaaa"
+          //-   <br/>
+
+        // { Fixed AD }
+        .adbox.adbox-rail.fixed
+          .clearfix
+            a.btn-close(href="")
+              i.icon.icon-close
+          figure
+            a(href="")
+              p.figure-title 下載APP 天天刮天天抽
+              img.figure-img(src="/public/images/app-download-qrcode.svg", alt="")
+
+        // { GoTop } 
+        a.btn-gotop
+          i.icon.icon-arrow-up
+          span TOP
+
+    // { Footer } 
+    footer.footer.festival
+      include ../_layouts/footer.pug
+

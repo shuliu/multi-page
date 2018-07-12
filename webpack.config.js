@@ -1,8 +1,42 @@
 const fs = require('fs');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+let pages = [];
+// Our function that generates our html plugins
+function generateHtmlPlugins(templateDir) {
+  // Read files in template directory
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+
+  templateFiles.forEach(item => {
+    // Split names and extension
+    const parts = item.split('.');
+    const name = parts[0] || undefined;
+    const extension = parts[1] || undefined;
+
+    if( extension === undefined ) {
+      var newTemplateDir = templateDir + '/' + name;
+      generateHtmlPlugins(newTemplateDir);
+    }
+
+    // Create new HtmlWebPackPlugin with options
+    // else 
+    if( name !== undefined && extension !== undefined ) {
+      pages.push(new HtmlWebPackPlugin({
+          filename: `${name}.html`,
+          template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+        })
+      );
+    }
+  });
+  return pages;
+}
+
+// Call our function on our views directory.
+const htmlPlugins = generateHtmlPlugins('./mockup') || [];
+console.log(htmlPlugins);
 const pug = {
   test: /\.pug$/,
   use: ['html-loader?attrs=false', 'pug-html-loader?pretty']
@@ -50,12 +84,12 @@ let config = {
   // resolve: {},
   devtool: 'inline-source-map',
   plugins: [
-    // new CleanWebpackPlugin(['dist']), // 清除之前產生的文件
+    new CleanWebpackPlugin(['dist']), // 清除之前產生的文件
 
-    new HtmlWebPackPlugin({
-      template: 'mockup/index.pug',
-      filename: 'index.html'
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: 'mockup/index.pug',
+    //   filename: 'index.html'
+    // }),
 
     // new HtmlWebPackPlugin({
     //   template: 'mockup/home.pug',
@@ -81,7 +115,7 @@ let config = {
     //       return titles[id];
     //   } // or maybe a shorthand like title: titles?
     // })
-  ]
+  ].concat(htmlPlugins)
 };
 
 module.exports = config;
