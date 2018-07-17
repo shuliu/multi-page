@@ -1,22 +1,20 @@
 
-include ./_variable.pug
 
 //- ---------------------------------------------------
 //- Type
 .menu-list.category-list
   each item, index in category_group
     .menu-item.category-item(class="category-item-"+(index+1))
-      //- p=JSON.stringify(item)
-      //- a.cate-name(href="/dist/category-main.html").
-      //-   #[i.icon(class=item.icon)]#{item.name}
-      //- .menu-list.menu-sub
-      //-   each item2, index in item.cate_sub
-      //-     .menu-item
-      //-       a.cate-sub-name(href="/dist/category-sub.html").
-      //-         #{item2.name}#[i.icon.icon-arrow-right]
-      //-       .nav.nav-inline
-      //-         each item3, index in item2.cate_child
-      //-           a(href="/dist/category-sub-child.html")= item3
+      a.cate-name(href="/dist/category-main.html").
+        #[i.icon(class=item.icon)]#{item.name}
+      .menu-list.menu-sub
+        each item2, index in item.cate_sub
+          .menu-item
+            a.cate-sub-name(href="/dist/category-sub.html").
+              #{item2.name}#[i.icon.icon-arrow-right]
+            .nav.nav-inline
+              each item3, index in item2.cate_child
+                a(href="/dist/category-sub-child.html")= item3
       
 
 

@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+var webpack = require("webpack");
 
 let pages = [];
 // 需要忽略的資料夾
@@ -42,6 +43,9 @@ function generateHtmlPlugins(templateDir) {
   });
   return pages;
 }
+
+// pug 全域變數
+let globalJsonData = (require(path.resolve(__dirname, 'src/define.json')));
 
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./mockup') || [];
@@ -91,8 +95,12 @@ let config = {
   },
   // resolve: {},
   devtool: 'inline-source-map',
+  devServer: {
+    // contentBase: './dist',
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清除之前產生的文件
+    new webpack.DefinePlugin(globalJsonData)
   ].concat(htmlPlugins)
 };
 
